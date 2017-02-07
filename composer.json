@@ -1,0 +1,6 @@
+{
+  "require": {
+    "simplon/mysql": "*",
+	"hyyan/jaguar": "1.*"
+  }
+}
