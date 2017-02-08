@@ -63,7 +63,7 @@
 	//如果接收到了就处理并回复
 	if (!empty($postStr)){
 	    //将接收到的XML字符串写入日志， 用R标记表示接收消息
-	    $this->logger("R \n".$postStr);
+	    $this->logger("<WX Request>---------------- 接收事件推送 -----------------<WX Request>".PHP_EOL.$postStr);
 	    //将接收的消息处理返回一个对象
 	    $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
@@ -100,7 +100,7 @@
                     break;
 	    }
 	    //将响应的消息再次写入日志， 使用T标记响应的消息！
-            $this->logger("T \n".$result);
+            $this->logger("<Dev Respone>---------------- 开发服回复 -----------------<Dev Respone>".PHP_EOL.$result);
 	    //输出消息给微信
 	    echo $result;
 	}else {
