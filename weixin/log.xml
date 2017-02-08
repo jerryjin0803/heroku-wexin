@@ -1,0 +1,935 @@
+06:05:39 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386340</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[LOCATION]]></Event>
+<Latitude>28.318176</Latitude>
+<Longitude>109.730881</Longitude>
+<Precision>65.000000</Precision>
+</xml>
+06:05:39 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386339</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[您当前的位置：纬度 28.318176;经度 109.730881]]></Content>
+</xml>
+06:05:51 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386351</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[Contact]]></EventKey>
+</xml>
+06:05:51 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386351</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[有事请来电：
+18607437722]]></Content>
+</xml>
+06:05:58 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386358</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[多图]]></Content>
+<MsgId>6383980797274053608</MsgId>
+</xml>
+06:05:58 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386358</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 06:05:58
+技术支持 高洛峰]]></Content>
+</xml>
+06:06:31 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386391</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[多图文]]></Content>
+<MsgId>6383980939007974389</MsgId>
+</xml>
+06:06:31 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386391</CreateTime>
+<MsgType><![CDATA[news]]></MsgType>
+<ArticleCount>4</ArticleCount>
+<Articles>
+    <item>
+        <Title><![CDATA[基本资料]]></Title>
+        <Description><![CDATA[姓名：金鑫性别专湖南吉首]]></Description>
+        <PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcTwGbLnPQwQqCrxtjC644zYjQma8Nib17Vy8z82JL6APUMzE7DUJbJnQ/0]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[个人简介]]></Title>
+        <Description><![CDATA[本人自毕业后，一直在广州、深圳发展，现在决定回吉首工作，求职程序开发岗位。
+多年游戏策划兼职脚本开发，有Unity 3D、Cocos2dx、Spine 游戏项目经验。 
+编程技能：HTML、CSS、JavaScript、Jquery、VBA、SQL，因为工作的需要也接触过其它一些五花八门的语言和脚本。目前正在学习PHP。
+熟练掌握 Word、Excel、Visio、Axure、PS 等常用软件，熟悉程序美术之间的配合。
+责任心强，工作踏实认真，能吃苦耐劳，富有团队精神、爱好专研勇于挑战。]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_gif/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrc8NmVB4CvHVU5UgRkovLHHZiaLOSxnAia5JzJicGUhYPr1opV7ds1CKocA/s640]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[工作经验]]></Title>
+        <Description><![CDATA[2015年1月 至 2016年04月 
+动网先锋网络科技有限公司
+游戏策划
+1. 负责各类养成系统的设计和相关文档撰写，以及后期跟进。
+2. 审核包括UI、音效、特效 在内的所有美术资源，协调开发进度。
+3. 负责项目所需的辅助工具开发：导表工具、GM系统前端界面。
+2013年8月 至 2014年12月
+广州乐添信息科技有限公司
+游戏策划
+1. 各类系统功能的设计并撰写相关文档。参与制定开发计划，并具体跟进执行。
+2. 审核 UI、原画、动画等美术资源，协助美术优化特效和动作表现。
+3. 协调程序美术工作，优化流程。为项目撰写Spine教程，设计相关解决方案。
+2006年8月 至 2010年4月
+深圳骏东科技有限公司
+游戏策划
+1. 儿童游戏设计和开发。
+2. FLASH网站、动画设计和制作。
+3. 红酒仓库进销存系统设计开发。
+]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcvURL5Z5NpXAe6UaQ2NhXZrs93ibBbicORicGU7dEpYUiaIUSCO52ibZKCEw/0?wx_fmt=jpeg]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[联系方式]]></Title>
+        <Description><![CDATA[手机：18607437722
+微信：Jerryjin_  （可以直接扫码添加）
+邮箱：jerryjin0630@QQ.com]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_png/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcZDhia8Fz5JT5r1EVNrHrwvbR5HoTnVoOPYq7qnGgpHmQiaFzckTgIdqQ/0]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+</Articles>
+</xml>
+06:07:17 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386437</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[scancode_waitmsg]]></Event>
+<EventKey><![CDATA[rselfmenu_0_0]]></EventKey>
+<ScanCodeInfo><ScanType><![CDATA[barcode]]></ScanType>
+<ScanResult><![CDATA[EAN_13,6931685501015]]></ScanResult>
+</ScanCodeInfo>
+</xml>
+06:07:17 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386437</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[scancode_waitmsg 扫码得到结果： rselfmenu_0_0
+                ScanType： barcode
+                ScanResult： EAN_13,6931685501015]]></Content>
+</xml>
+06:08:06 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386487</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[音乐]]></Content>
+<MsgId>6383981351324834833</MsgId>
+</xml>
+06:08:06 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386486</CreateTime>
+<MsgType><![CDATA[music]]></MsgType>
+<Music>
+    <Title><![CDATA[小歌曲你听听]]></Title>
+    <Description><![CDATA[歌手：不是高洛峰]]></Description>
+    <MusicUrl><![CDATA[http://wx.buqiu.com/app/hlw.mp3]]></MusicUrl>
+    <HQMusicUrl><![CDATA[http://wx.buqiu.com/app/hlw.mp3]]></HQMusicUrl>
+</Music>
+</xml>
+06:08:53 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386534</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[音乐]]></Content>
+<MsgId>6383981553188297764</MsgId>
+</xml>
+06:08:53 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386533</CreateTime>
+<MsgType><![CDATA[music]]></MsgType>
+<Music>
+    <Title><![CDATA[小歌曲你听听]]></Title>
+    <Description><![CDATA[歌手：不是高洛峰]]></Description>
+    <MusicUrl><![CDATA[http://wx.buqiu.com/app/hlw.mp3]]></MusicUrl>
+    <HQMusicUrl><![CDATA[http://wx.buqiu.com/app/hlw.mp3]]></HQMusicUrl>
+</Music>
+</xml>
+06:11:12 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386672</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[http://www.baidu.com]]></Content>
+<MsgId>6383982145893784668</MsgId>
+</xml>
+06:11:12 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386672</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 06:11:12
+技术支持 高洛峰]]></Content>
+</xml>
+06:13:29 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386809</CreateTime>
+<MsgType><![CDATA[voice]]></MsgType>
+<MediaId><![CDATA[bqv3kL7VUKbAau5gbth9ALf-Ix2w_QC6RiMMcrKKhDlFGwrx0U2HXZcT-rE16ISR]]></MediaId>
+<Format><![CDATA[amr]]></Format>
+<MsgId>6383982733860798464</MsgId>
+<Recognition><![CDATA[哈哈哈哈！]]></Recognition>
+</xml>
+06:13:29 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386809</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你刚才说的是：哈哈哈哈！]]></Content>
+</xml>
+06:13:56 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486386835</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[0zbUpISRKMf9heqb-2EVABeDFrH7R-Np90Z_WuhCLYD3OmScT75YRqKt3rLaXg9x]]></MediaId>
+<ThumbMediaId><![CDATA[rbXDZKXpEEt9v28WjYE5cjML6BH8OHvP6Dwnymf-kfdMw9lonb8ZXpOa5WMuq3vt]]></ThumbMediaId>
+<MsgId>6383982845973453964</MsgId>
+</xml>
+06:13:56 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486386836</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<Video>
+    <MediaId><![CDATA[0zbUpISRKMf9heqb-2EVABeDFrH7R-Np90Z_WuhCLYD3OmScT75YRqKt3rLaXg9x]]></MediaId>
+    <Title><![CDATA[this is a test]]></Title>
+    <Description><![CDATA[pai pai]]></Description>
+</Video>
+</xml>
+06:17:04 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387024</CreateTime>
+<MsgType><![CDATA[location]]></MsgType>
+<Location_X>28.314826</Location_X>
+<Location_Y>109.735578</Location_Y>
+<Scale>15</Scale>
+<Label><![CDATA[湘西土家族苗族自治州吉首市镇溪街道湘西自治州人民医院(老院)]]></Label>
+<MsgId>6383983657722272971</MsgId>
+</xml>
+06:17:04 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387024</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你发送的是位置，纬度为：28.314826；经度为：109.735578；缩放级别为：15；位置为：湘西土家族苗族自治州吉首市镇溪街道湘西自治州人民医院(老院)]]></Content>
+</xml>
+06:17:48 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387068</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od4Fs8L4Mr2rpGSoq172AhpBhX6AYkEZdOpXhPQ3v7FLLkIYJ0XQAeCjC8UePC4bw6w/0]]></PicUrl>
+<MsgId>6383983846700834022</MsgId>
+<MediaId><![CDATA[FBDFflniHK8bc-LxFHFa-MVzl7M8ZBegb9IaJ5LWVvKdQbtn1NFTW_Oe1DB1Km2U]]></MediaId>
+</xml>
+06:17:48 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387068</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<Image>
+    <MediaId><![CDATA[FBDFflniHK8bc-LxFHFa-MVzl7M8ZBegb9IaJ5LWVvKdQbtn1NFTW_Oe1DB1Km2U]]></MediaId>
+</Image>
+</xml>
+06:22:55 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387375</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[LOCATION]]></Event>
+<Latitude>28.318213</Latitude>
+<Longitude>109.730858</Longitude>
+<Precision>65.000000</Precision>
+</xml>
+06:22:55 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387375</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[您当前的位置：纬度 28.318213;经度 109.730858]]></Content>
+</xml>
+06:23:02 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387382</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+06:23:23 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387404</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+06:23:33 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387413</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[LOCATION]]></Event>
+<Latitude>28.318289</Latitude>
+<Longitude>109.730949</Longitude>
+<Precision>65.000000</Precision>
+</xml>
+06:23:33 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387413</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[您当前的位置：纬度 28.318289;经度 109.730949]]></Content>
+</xml>
+06:24:06 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387447</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></EventKey>
+<MenuId>443504956</MenuId>
+</xml>
+06:24:06 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387446</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[跳转链接 http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Content>
+</xml>
+06:24:10 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387451</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[Contact]]></EventKey>
+</xml>
+06:24:10 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387450</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[有事请来电：
+18607437722]]></Content>
+</xml>
+06:24:18 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486387458</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[LOCATION]]></Event>
+<Latitude>28.318241</Latitude>
+<Longitude>109.730820</Longitude>
+<Precision>65.000000</Precision>
+</xml>
+06:24:18 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486387458</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[您当前的位置：纬度 28.318241;经度 109.730820]]></Content>
+</xml>
+06:37:35 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486388255</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[IqX1Tm0YustQign5K1ovRoEghpGX-ADtqifm2bY2kiNPDtteiK8RamxWMjJ2ThHs]]></MediaId>
+<ThumbMediaId><![CDATA[25j5w45DIn8rFdZDMwJzL9ycBRjK8U2bpi232QfhsXIjrpt5aGJFTglMl5T8Twh1]]></ThumbMediaId>
+<MsgId>6383988944827014923</MsgId>
+</xml>
+06:37:35 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486388255</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<Video>
+    <MediaId><![CDATA[IqX1Tm0YustQign5K1ovRoEghpGX-ADtqifm2bY2kiNPDtteiK8RamxWMjJ2ThHs]]></MediaId>
+    <Title><![CDATA[this is a test]]></Title>
+    <Description><![CDATA[pai pai]]></Description>
+</Video>
+</xml>
+08:00:52 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393253</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[Contact]]></EventKey>
+</xml>
+08:00:52 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393252</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[有事请来电：
+18607437722]]></Content>
+</xml>
+08:01:03 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393263</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[音乐]]></Content>
+<MsgId>6384010454023235120</MsgId>
+</xml>
+08:01:03 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393263</CreateTime>
+<MsgType><![CDATA[music]]></MsgType>
+<Music>
+    <Title><![CDATA[come some music]]></Title>
+    <Description><![CDATA[来首歌听听]]></Description>
+    <MusicUrl><![CDATA[http://jerryjin.5gbfree.com/music/wwd.mp3]]></MusicUrl>
+    <HQMusicUrl><![CDATA[http://jerryjin.5gbfree.com/music/wwd.mp3]]></HQMusicUrl>
+</Music>
+</xml>
+08:01:27 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393288</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[多图]]></Content>
+<MsgId>6384010561397417527</MsgId>
+</xml>
+08:01:27 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393287</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 08:01:27
+技术支持 高洛峰]]></Content>
+</xml>
+08:01:43 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393303</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[单图]]></Content>
+<MsgId>6384010625821926974</MsgId>
+</xml>
+08:01:43 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393303</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 08:01:43
+技术支持 高洛峰]]></Content>
+</xml>
+08:01:48 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393308</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[图]]></Content>
+<MsgId>6384010647296763459</MsgId>
+</xml>
+08:01:48 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393308</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 08:01:48
+技术支持 高洛峰]]></Content>
+</xml>
+08:01:53 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393314</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[s]]></Content>
+<MsgId>6384010673066567238</MsgId>
+</xml>
+08:01:53 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393313</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 08:01:53
+技术支持 高洛峰]]></Content>
+</xml>
+08:06:59 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393619</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[IXdkIWhYaz5DvLkMbvWsNi0u_kt3C89Hb7ZLHbepEDpcR2tPdf2XE2ANiJ5v-Brp]]></MediaId>
+<ThumbMediaId><![CDATA[Z5_iK0FWeJa1ZkiqTJvaBKb1LLqnzWOKwnJ5-VNjImXMaqr-O5DT73X97wX2qUT3]]></ThumbMediaId>
+<MsgId>6384011983031592610</MsgId>
+</xml>
+08:06:59 T 
+
+08:07:54 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393674</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[jj]]></Content>
+<MsgId>6384012219254793904</MsgId>
+</xml>
+08:07:54 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393674</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[2017-02-06 08:07:54
+你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:11:10 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393870</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[http://www.baidu.com]]></Content>
+<MsgId>6384013061068383957</MsgId>
+</xml>
+08:11:10 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393870</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:11:35 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393894</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[vxqGRLyypsQwkoEcoevAXszhROHDiZf15k-K-mB-gayPVlt70-4NU4zJnBfJ5DxA]]></MediaId>
+<ThumbMediaId><![CDATA[cX3IiTG2yzTg7rlXkP0T94VMunCvQFSiwykGmQ8GKfpQtaZzCQZYnkjYHzwWZM7C]]></ThumbMediaId>
+<MsgId>6384013164147599068</MsgId>
+</xml>
+08:11:35 T 
+
+08:11:49 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393909</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[/:B-)]]></Content>
+<MsgId>6384013228572108510</MsgId>
+</xml>
+08:11:49 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393909</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:12:01 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486393921</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od4Fs8L4Mr2rpGSoq172AhpBhX6AYkEZdOpXhPQ3v7FLLkIYJ0XQAeCjC8UePC4bw6w/0]]></PicUrl>
+<MsgId>6384013280111716070</MsgId>
+<MediaId><![CDATA[yiORc2AA62IY01PJ6Vj_yRVbP8aMLbx3rcUrMLDSIc9srrjxwA7SSzhFFq-HcTqU]]></MediaId>
+</xml>
+08:12:01 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486393921</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<Image>
+    <MediaId><![CDATA[yiORc2AA62IY01PJ6Vj_yRVbP8aMLbx3rcUrMLDSIc9srrjxwA7SSzhFFq-HcTqU]]></MediaId>
+</Image>
+</xml>
+08:16:17 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394177</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[b5UScng92nFPW5y1Ge5nDMUBlUUnT6L-SYhEnAlr0CZSmA6SXU_Hkm66uJBxG74C]]></MediaId>
+<ThumbMediaId><![CDATA[gmLuhyczD3rEfHnoluSFdR8Zgf0iKuY9MATO31AS9CwUS8Hqg5Qbr1DeBBWYmINb]]></ThumbMediaId>
+<MsgId>6384014379623343911</MsgId>
+</xml>
+08:16:17 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394177</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<Video>
+    <MediaId><![CDATA[b5UScng92nFPW5y1Ge5nDMUBlUUnT6L-SYhEnAlr0CZSmA6SXU_Hkm66uJBxG74C]]></MediaId>
+    <Title><![CDATA[视频调试，原样返回!]]></Title>
+    <Description><![CDATA[pai pai]]></Description>
+</Video>
+</xml>
+08:23:35 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394614</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[i0IajgC73vQOBM0fwMDLoT3BFVJd6e1beJg-8I-LQdPaZi2651hzwtIzeQuLW1Y8]]></MediaId>
+<ThumbMediaId><![CDATA[QEYUVjY0Jf3VGtWHrpRbGUTJKSgikr8eKF95dj4-526y9nqC7Jo0GeYkXiRFcUnA]]></ThumbMediaId>
+<MsgId>6384016256524052366</MsgId>
+</xml>
+08:23:35 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394615</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[跳转链接 ]]></Content>
+</xml>
+08:24:56 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394696</CreateTime>
+<MsgType><![CDATA[video]]></MsgType>
+<MediaId><![CDATA[zxeJrESfBmkO4d8QYxKCsUKWJiPeFO8TfYYqSaJ4CdhBYSN4p1PF7Ff6n9MivK3S]]></MediaId>
+<ThumbMediaId><![CDATA[JFhnafvKC1J0omFBVwF4cuY0X8d-nDYdRpaWPwYA0Z0ZP2WAvkNrz3gvvaXh8za_]]></ThumbMediaId>
+<MsgId>6384016608711370660</MsgId>
+</xml>
+08:24:56 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394696</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[跳转链接： zxeJrESfBmkO4d8QYxKCsUKWJiPeFO8TfYYqSaJ4CdhBYSN4p1PF7Ff6n9MivK3S]]></Content>
+</xml>
+08:25:37 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394737</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[D]]></Content>
+<MsgId>6384016784805029811</MsgId>
+</xml>
+08:25:37 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394737</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:25:44 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394745</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[多图]]></Content>
+<MsgId>6384016819164768183</MsgId>
+</xml>
+08:25:44 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394744</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:25:52 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394752</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[图文]]></Content>
+<MsgId>6384016849229539260</MsgId>
+</xml>
+08:25:52 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394752</CreateTime>
+<MsgType><![CDATA[news]]></MsgType>
+<ArticleCount>4</ArticleCount>
+<Articles>
+    <item>
+        <Title><![CDATA[基本资料]]></Title>
+        <Description><![CDATA[姓名：金鑫性别专湖南吉首]]></Description>
+        <PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcTwGbLnPQwQqCrxtjC644zYjQma8Nib17Vy8z82JL6APUMzE7DUJbJnQ/0]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[个人简介]]></Title>
+        <Description><![CDATA[本人自毕业后，一直在广州、深圳发展，现在决定回吉首工作，求职程序开发岗位。
+多年游戏策划兼职脚本开发，有Unity 3D、Cocos2dx、Spine 游戏项目经验。 
+编程技能：HTML、CSS、JavaScript、Jquery、VBA、SQL，因为工作的需要也接触过其它一些五花八门的语言和脚本。目前正在学习PHP。
+熟练掌握 Word、Excel、Visio、Axure、PS 等常用软件，熟悉程序美术之间的配合。
+责任心强，工作踏实认真，能吃苦耐劳，富有团队精神、爱好专研勇于挑战。]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_gif/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrc8NmVB4CvHVU5UgRkovLHHZiaLOSxnAia5JzJicGUhYPr1opV7ds1CKocA/s640]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[工作经验]]></Title>
+        <Description><![CDATA[2015年1月 至 2016年04月 
+动网先锋网络科技有限公司
+游戏策划
+1. 负责各类养成系统的设计和相关文档撰写，以及后期跟进。
+2. 审核包括UI、音效、特效 在内的所有美术资源，协调开发进度。
+3. 负责项目所需的辅助工具开发：导表工具、GM系统前端界面。
+2013年8月 至 2014年12月
+广州乐添信息科技有限公司
+游戏策划
+1. 各类系统功能的设计并撰写相关文档。参与制定开发计划，并具体跟进执行。
+2. 审核 UI、原画、动画等美术资源，协助美术优化特效和动作表现。
+3. 协调程序美术工作，优化流程。为项目撰写Spine教程，设计相关解决方案。
+2006年8月 至 2010年4月
+深圳骏东科技有限公司
+游戏策划
+1. 儿童游戏设计和开发。
+2. FLASH网站、动画设计和制作。
+3. 红酒仓库进销存系统设计开发。
+]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcvURL5Z5NpXAe6UaQ2NhXZrs93ibBbicORicGU7dEpYUiaIUSCO52ibZKCEw/0?wx_fmt=jpeg]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+    <item>
+        <Title><![CDATA[联系方式]]></Title>
+        <Description><![CDATA[手机：18607437722
+微信：Jerryjin_  （可以直接扫码添加）
+邮箱：jerryjin0630@QQ.com]]></Description>
+        <PicUrl><![CDATA[https://mmbiz.qlogo.cn/mmbiz_png/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcZDhia8Fz5JT5r1EVNrHrwvbR5HoTnVoOPYq7qnGgpHmQiaFzckTgIdqQ/0]]></PicUrl>
+        <Url><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Url>
+    </item>
+</Articles>
+</xml>
+08:26:14 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394775</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[文本]]></Content>
+<MsgId>6384016948013787074</MsgId>
+</xml>
+08:26:14 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394774</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[这是个文本消息]]></Content>
+</xml>
+08:26:27 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486394787</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[单图文]]></Content>
+<MsgId>6384016999553394639</MsgId>
+</xml>
+08:26:27 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486394787</CreateTime>
+<MsgType><![CDATA[news]]></MsgType>
+<ArticleCount>1</ArticleCount>
+<Articles>
+    <item>
+        <Title><![CDATA[小规模低性能低流量网站设计原则]]></Title>
+        <Description><![CDATA[单图文内容]]></Description>
+        <PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz/2j8mJHm8CogqL5ZSDErOzeiaGyWIibNrwrVibuKUibkqMjicCmjTjNMYic8vwv3zMPNfichUwLQp35apGhiciatcv0j6xwA/0]]></PicUrl>
+        <Url><![CDATA[http://mp.weixin.qq.com/s?__biz=MjM5NDAxMDEyMg==&mid=201222165&idx=1&sn=68b6c2a79e1e33c5228fff3cb1761587#rd]]></Url>
+    </item>
+</Articles>
+</xml>
+08:32:59 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395180</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[pic_sysphoto]]></Event>
+<EventKey><![CDATA[rselfmenu_1_0]]></EventKey>
+<SendPicsInfo><Count>1</Count>
+<PicList><item><PicMd5Sum><![CDATA[9c0f506ee6524b489d8dcd2b23e339b9]]></PicMd5Sum>
+</item>
+</PicList>
+</SendPicsInfo>
+</xml>
+08:32:59 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395179</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[receive a new event: pic_sysphoto]]></Content>
+</xml>
+08:33:01 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395181</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od4Fs8L4Mr2rpkDa13Z1IbyBrGjuB7UMibEHOViaPx8MSSNFia2v56squZvgicvStEtVLtQ/0]]></PicUrl>
+<MsgId>6384018691770509343</MsgId>
+<MediaId><![CDATA[5vB9Eb_bn-axGE10loeUO0R-71fEaJb7g0QSdeTdt6RWO9LXvOKnHjoPgvcdEFdC]]></MediaId>
+</xml>
+08:33:01 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395181</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<Image>
+    <MediaId><![CDATA[5vB9Eb_bn-axGE10loeUO0R-71fEaJb7g0QSdeTdt6RWO9LXvOKnHjoPgvcdEFdC]]></MediaId>
+</Image>
+</xml>
+08:33:10 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395191</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[pic_photo_or_album]]></Event>
+<EventKey><![CDATA[rselfmenu_1_1]]></EventKey>
+<SendPicsInfo><Count>1</Count>
+<PicList><item><PicMd5Sum><![CDATA[99f5e56fcebde72c37787106623b1fa0]]></PicMd5Sum>
+</item>
+</PicList>
+</SendPicsInfo>
+</xml>
+08:33:10 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395190</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[receive a new event: pic_photo_or_album]]></Content>
+</xml>
+08:33:12 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395191</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<PicUrl><![CDATA[http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od4Fs8L4Mr2rpagmnCibjXESrCJTzym6sKPbWkoxlg0zkneA5vd55Ir5SCWDvvbFCbvQ/0]]></PicUrl>
+<MsgId>6384018734720182317</MsgId>
+<MediaId><![CDATA[5g2Il4j9f1I3e2E_s5jyFjBw-KCk1iYg9lZAmk1gSptHLycWBj0eEndUVmFX4RM4]]></MediaId>
+</xml>
+08:33:12 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395192</CreateTime>
+<MsgType><![CDATA[image]]></MsgType>
+<Image>
+    <MediaId><![CDATA[5g2Il4j9f1I3e2E_s5jyFjBw-KCk1iYg9lZAmk1gSptHLycWBj0eEndUVmFX4RM4]]></MediaId>
+</Image>
+</xml>
+08:33:23 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395203</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[CLICK]]></Event>
+<EventKey><![CDATA[Contact]]></EventKey>
+</xml>
+08:33:23 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395203</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[有事请来电：
+18607437722]]></Content>
+</xml>
+08:33:28 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395208</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[VIEW]]></Event>
+<EventKey><![CDATA[http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></EventKey>
+<MenuId>443504956</MenuId>
+</xml>
+08:33:28 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395208</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[跳转链接 http://jerryjin0630.oschina.io/jerry/resume/index.pdf]]></Content>
+</xml>
+08:33:42 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395223</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你好]]></Content>
+<MsgId>6384018872159135796</MsgId>
+</xml>
+08:33:42 T 
+<xml>
+<ToUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></ToUserName>
+<FromUserName><![CDATA[gh_0f21671616d0]]></FromUserName>
+<CreateTime>1486395222</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[你说啥，笨笨听不懂！哈哈哈哈]]></Content>
+</xml>
+08:34:19 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395259</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[unsubscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>
+08:35:23 R 
+<xml><ToUserName><![CDATA[gh_0f21671616d0]]></ToUserName>
+<FromUserName><![CDATA[oCm6Zw0CCqvl4F6Qpuso0mLBouh0]]></FromUserName>
+<CreateTime>1486395323</CreateTime>
+<MsgType><![CDATA[event]]></MsgType>
+<Event><![CDATA[subscribe]]></Event>
+<EventKey><![CDATA[]]></EventKey>
+</xml>

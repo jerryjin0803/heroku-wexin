@@ -537,7 +537,7 @@ $item_str
     private function logger($log_content)
     {
       
-	    $max_size = 100000;   //声明日志的最大尺寸
+	    $max_size = 10000;   //声明日志的最大尺寸
 
 	    $log_filename = "log.xml";  //日志名称
 
@@ -547,7 +547,11 @@ $item_str
 	    }
 
 	    //写入日志，内容前加上时间， 后面加上换行， 以追加的方式写入
-	    file_put_contents($log_filename, date('H:i:s')." ".$log_content."\n", FILE_APPEND);
+	    //file_put_contents($log_filename, date('H:i:s')." ".$log_content.PHP_EOL, FILE_APPEND);
+
+        $temp=file_get_contents($log_filename); //获取文件原内容
+        $add_str= date('H:i:s')." ".$log_content.PHP_EOL; //准备要添加的新内容
+        file_put_contents($log_filename, $add_str.$temp); //写入：新内容.原内容
         
     }
 }
