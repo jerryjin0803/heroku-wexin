@@ -1,5 +1,7 @@
 <?php
-	
+    //设置下时区
+	date_default_timezone_set('Asia/Shanghai');
+    
 	//声明一个常量定义一个token值, token
 	define("TOKEN", "weixin");
 
@@ -63,7 +65,7 @@
 	//如果接收到了就处理并回复
 	if (!empty($postStr)){
 	    //将接收到的XML字符串写入日志， 用R标记表示接收消息
-	    $this->logger("<WX Request>---------------- 接收事件推送 -----------------<WX Request>".PHP_EOL.$postStr);
+	    $this->logger("<WX Request>---------------- 接收事件推送 ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$postStr);
 	    //将接收的消息处理返回一个对象
 	    $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
@@ -100,7 +102,8 @@
                     break;
 	    }
 	    //将响应的消息再次写入日志， 使用T标记响应的消息！
-            $this->logger("<Dev Respone>---------------- 开发服回复 -----------------<Dev Respone>".PHP_EOL.$result);
+
+            $this->logger("<Dev Respone>--------开发服回复 ---- ".date('H:i:s')." ---------<Dev Respone>".PHP_EOL.$result);
 	    //输出消息给微信
 	    echo $result;
 	}else {
@@ -550,7 +553,8 @@ $item_str
 	    //file_put_contents($log_filename, date('H:i:s')." ".$log_content.PHP_EOL, FILE_APPEND);
 
         $temp=file_get_contents($log_filename); //获取文件原内容
-        $add_str= date('H:i:s')." ".$log_content.PHP_EOL; //准备要添加的新内容
+        //$add_str= date('H:i:s')." ".$log_content.PHP_EOL; //准备要添加的新内容
+        $add_str= $log_content.PHP_EOL; //准备要添加的新内容
         file_put_contents($log_filename, $add_str.$temp); //写入：新内容.原内容
         
     }

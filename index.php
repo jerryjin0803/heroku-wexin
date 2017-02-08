@@ -1,7 +1,7 @@
 <?php
 	echo "<p>大王叫我，来...巡..山....罗哦...遇了南山，遇北山罗哦...</p>";
 	echo "<p><a href = 'phpinfo.php'>phpinfo</a></p>";
-	//echo "<p><a href = 'weixin/removelog.php'>清除log</a></p>";
+	echo "<p><a href = 'weixin/removelog.php'>清除log</a></p>";
 	// echo "<body style='overflow-x:hidden'>";
 	// echo "<textarea rows=1 cols=40 style='width: 101%;height:88%'>";
 	// //显示日志内容
