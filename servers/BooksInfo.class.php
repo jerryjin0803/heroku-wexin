@@ -33,19 +33,21 @@ class BooksInfo {
 		$images	= $bookInfo['images']['large'];	//取出书的封面图
 
 //拼接文本内容
-$bookInfoStr = <<<bookInfoStr
-{$bookInfo['title']}
-作者: {$author}%s
-页数: {$bookInfo['pages']}
-装帧: {$bookInfo['binding']}
-定价: {$bookInfo['price']}
-出版年: {$bookInfo['pubdate']}
-ISBN码: {$bookInfo['isbn13']}
-出版社: {$bookInfo['publisher']}
-bookInfoStr;
+// $bookInfoStr = <<<bookInfoStr
+// 作者: {$author}
+// 页数: {$bookInfo['pages']}
+// 装帧: {$bookInfo['binding']}
+// 定价: {$bookInfo['price']}
+// 出版年: {$bookInfo['pubdate']}
+// ISBN码: {$bookInfo['isbn13']}
+// 出版社: {$bookInfo['publisher']}
+// bookInfoStr;
+//译者只在有的时候，才显示。
+$bookInfoStr = "作者: {$author}".$translator ? "\n译者: ".$translator : ''."\n定价: {$bookInfo['price']}
+\n出版社: {$bookInfo['publisher']}";
 
-		//译者只在有的时候，才显示。
-		$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
+		
+		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array();
@@ -53,7 +55,7 @@ bookInfoStr;
 			"Title" => $bookInfo['title'], 
 			"Description" => $bookInfoStr, 
 			"PicUrl" => $images, 
-			"Url" => ""
+			"Url" => "http://www.baidu.com"
 			);
 
 		//返回,回复消息内容
@@ -63,8 +65,8 @@ bookInfoStr;
 
 // //----------------    test post   --------------------
 
-// $BooksInfo = new BooksInfo();
-// $output =  $BooksInfo->isbn("9787111135104");
-// print_r($output) ;
+$BooksInfo = new BooksInfo();
+$output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
+print_r($output) ;
 // // echo $output;
 
