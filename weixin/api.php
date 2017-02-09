@@ -172,6 +172,8 @@
                 $BooksInfo = new BooksInfo(); 
                 $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
+                //$content =  $isbn;
+                $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
 
 				break;
 
@@ -189,34 +191,13 @@
 						$content[] = array("Title"=>"小规模低性能低流量网站设计原则",  "Description"=>"单图文内容", "PicUrl"=>"http://mmbiz.qpic.cn/mmbiz/2j8mJHm8CogqL5ZSDErOzeiaGyWIibNrwrVibuKUibkqMjicCmjTjNMYic8vwv3zMPNfichUwLQp35apGhiciatcv0j6xwA/0", "Url" =>"http://mp.weixin.qq.com/s?__biz=MjM5NDAxMDEyMg==&mid=201222165&idx=1&sn=68b6c2a79e1e33c5228fff3cb1761587#rd");
 						break;
 					case "Information":
-						$content = "姓名：金鑫
-生日：1984-12-31
-性别：男性
-民族：汉族
-年龄：33岁
-籍贯：湖南
-学历：大专";
+						$content = "姓名：金鑫";
 						break;
 					case "Profile":
-						$content = "本人的开发经验包括：Web前端、进销存系统、手机游戏。
-有 Unity 3D、Cocos2dx、Spine 项目经验，并熟练使用相关软件。 
-熟练掌握 Word、Excel、Visio、Axure、Photoshop 等常用办公和设计软件。
-具有强烈的进取心，有激情，能吃苦耐劳，能承受工作压力。
-责任心强，工作踏实认真，富有团队精神、爱好专研勇于挑战。";
+						$content = "本人勇于挑战。";
 						break;
 					case "Experience":
-						$content = "【2015年1月 至 2016年04月	动网先锋网络科技有限公司	游戏策划】
-1.负责各类养成系统的设计和相关文档撰写，以及后期跟进。
-2.审核包括UI、音效、特效 在内的所有美术资源，协调开发进度。
-3.负责项目所需的辅助工具开发：导表工具、GM系统前端界面。
-【2013年8月 至 2014年12月	广州乐添信息科技有限公司	游戏策划】
-1.各类系统功能的设计并撰写相关文档。参与制定开发计划，并具体跟进执行。
-2.审核 UI、原画、动画等美术资源，协助美术优化特效和动作表现。
-3.协调程序美术工作，优化流程。为项目撰写Spine教程，设计相关解决方案。
-【2006年8月 至 2010年4月	深圳骏东科技有限公司	WEB开发】
-1.儿童游戏设计和开发。
-2.FLASH网站、动画设计和制作。
-3.红酒仓库进销存系统设计开发。";
+						$content = "游戏策划";
 						break;
 					case "Contact":
 						$content = "有事请来电：

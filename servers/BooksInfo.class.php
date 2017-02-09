@@ -63,8 +63,8 @@ bookInfoStr;
 
 // //----------------    test post   --------------------
 
-$BooksInfo = new BooksInfo();
-$output =  $BooksInfo->isbn("9787111135104");
-print_r($output) ;
+// $BooksInfo = new BooksInfo();
+// $output =  $BooksInfo->isbn("9787111135104");
+// print_r($output) ;
 // // echo $output;
 
