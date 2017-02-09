@@ -160,18 +160,24 @@
 
 			//--------------------------  扫码事件 --------------------------
 			case "scancode_waitmsg":
-				$content = "scancode_waitmsg 扫码得到结果： ".$object->EventKey ."
-                ScanType： ".$object->ScanCodeInfo->ScanType ."
-                ScanResult： ".$object->ScanCodeInfo->ScanResult;
+                // $content = "scancode_waitmsg 扫码得到结果： ".$object->EventKey ."
+                // ScanType： ".$object->ScanCodeInfo->ScanType ."
+                // ScanResult： ".$object->ScanCodeInfo->ScanResult;				
+                $muneId = $object->EventKey;//创建菜单时的 "key": "rselfmenu_0_0", 
+                $scanType = $object->ScanCodeInfo->ScanType;
+                $scanResult = $object->ScanCodeInfo->ScanResult;
+                $isbn = explode(',',$scanResult)[1]; 
                 //------------- 扫图书 ISBN 码 -----------------
-                
-
+                include '../servers/BooksInfo.class.php';
+                $BooksInfo = new BooksInfo(); 
+                $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
 
 				break;
 
             case "scancode_push":
-                $content = "scancode_push 扫码得到结果： ".$object->EventKey;
+                //这事件一触发，微信就显示它息的界面了。后台貌似只能记录下信息什么的。
+                //$content = "scancode_push 扫码得到结果： ".$object->EventKey;
 
                 break;
 			//--------------------------  菜单点击事件 --------------------------
@@ -280,31 +286,9 @@
             $content = array();
             $content[] = array("Title"=>"基本资料", "Description"=>"姓名：金鑫性别专湖南吉首", "PicUrl"=>"http://mmbiz.qpic.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcTwGbLnPQwQqCrxtjC644zYjQma8Nib17Vy8z82JL6APUMzE7DUJbJnQ/0", "Url" =>"http://jerryjin0630.oschina.io/jerry/resume/index.pdf");
 
-            $content[] = array("Title"=>"个人简介", "Description"=>"本人自毕业后，一直在广州、深圳发展，现在决定回吉首工作，求职程序开发岗位。
-多年游戏策划兼职脚本开发，有Unity 3D、Cocos2dx、Spine 游戏项目经验。 
-编程技能：HTML、CSS、JavaScript、Jquery、VBA、SQL，因为工作的需要也接触过其它一些五花八门的语言和脚本。目前正在学习PHP。
-熟练掌握 Word、Excel、Visio、Axure、PS 等常用软件，熟悉程序美术之间的配合。
-责任心强，工作踏实认真，能吃苦耐劳，富有团队精神、爱好专研勇于挑战。", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_gif/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrc8NmVB4CvHVU5UgRkovLHHZiaLOSxnAia5JzJicGUhYPr1opV7ds1CKocA/s640", "Url" =>"http://jerryjin0630.oschina.io/jerry/resume/index.pdf");
+            $content[] = array("Title"=>"个人简介", "Description"=>"不超过120字", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_gif/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrc8NmVB4CvHVU5UgRkovLHHZiaLOSxnAia5JzJicGUhYPr1opV7ds1CKocA/s640", "Url" =>"http://jerryjin0630.oschina.io/jerry/resume/index.pdf");
 
-            $content[] = array("Title"=>"工作经验", "Description"=>"2015年1月 至 2016年04月 
-动网先锋网络科技有限公司
-游戏策划
-1. 负责各类养成系统的设计和相关文档撰写，以及后期跟进。
-2. 审核包括UI、音效、特效 在内的所有美术资源，协调开发进度。
-3. 负责项目所需的辅助工具开发：导表工具、GM系统前端界面。
-2013年8月 至 2014年12月
-广州乐添信息科技有限公司
-游戏策划
-1. 各类系统功能的设计并撰写相关文档。参与制定开发计划，并具体跟进执行。
-2. 审核 UI、原画、动画等美术资源，协助美术优化特效和动作表现。
-3. 协调程序美术工作，优化流程。为项目撰写Spine教程，设计相关解决方案。
-2006年8月 至 2010年4月
-深圳骏东科技有限公司
-游戏策划
-1. 儿童游戏设计和开发。
-2. FLASH网站、动画设计和制作。
-3. 红酒仓库进销存系统设计开发。
-", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcvURL5Z5NpXAe6UaQ2NhXZrs93ibBbicORicGU7dEpYUiaIUSCO52ibZKCEw/0?wx_fmt=jpeg", "Url" =>"http://jerryjin0630.oschina.io/jerry/resume/index.pdf");
+            $content[] = array("Title"=>"工作经验", "Description"=>"不超过120字", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrcvURL5Z5NpXAe6UaQ2NhXZrs93ibBbicORicGU7dEpYUiaIUSCO52ibZKCEw/0?wx_fmt=jpeg", "Url" =>"http://jerryjin0630.oschina.io/jerry/resume/index.pdf");
 
             $content[] = array("Title"=>"联系方式", "Description"=>"手机：18607437722
 微信：Jerryjin_  （可以直接扫码添加）
