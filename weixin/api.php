@@ -163,16 +163,32 @@
 			case "scancode_waitmsg":
                 // $content = "scancode_waitmsg 扫码得到结果： ".$object->EventKey ."
                 // ScanType： ".$object->ScanCodeInfo->ScanType ."
-                // ScanResult： ".$object->ScanCodeInfo->ScanResult;				
-                $muneId = $object->EventKey;//创建菜单时的 "key": "rselfmenu_0_0", 
-                $scanType = $object->ScanCodeInfo->ScanType;
-                $scanResult = $object->ScanCodeInfo->ScanResult;
-                $isbn = explode(',',$scanResult)[1]; 
-                //------------- 扫图书 ISBN 码 -----------------
-                include '../servers/BooksInfo.class.php';
-                $BooksInfo = new BooksInfo(); 
-                $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
-                //----------------------------------------------
+                // ScanResult： ".$object->ScanCodeInfo->ScanResult;
+                switch ($object->EventKey)
+                {
+                    //图书扫码
+                    case "rselfmenu_0_0":
+                        $muneId = $object->EventKey;//创建菜单时的 "key": "rselfmenu_0_0", 
+                        $scanType = $object->ScanCodeInfo->ScanType;
+                        $scanResult = $object->ScanCodeInfo->ScanResult;
+                        $isbn = explode(',',$scanResult)[1]; 
+                        //------------- 扫图书 ISBN 码 -----------------
+                        include '../servers/BooksInfo.class.php';
+                        $BooksInfo = new BooksInfo(); 
+                        $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
+                        //----------------------------------------------
+                        break;
+                    //商品扫码
+                    case "rselfmenu_0_1":
+                        $content = $object->ScanCodeInfo->ScanResult;
+
+                        break;
+                    //其它
+                    default:
+                        //什么都不做。让微信自己处理
+                        break;
+                }
+
 
 				break;
 
