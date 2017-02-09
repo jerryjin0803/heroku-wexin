@@ -168,12 +168,12 @@
                 $scanResult = $object->ScanCodeInfo->ScanResult;
                 $isbn = explode(',',$scanResult)[1]; 
                 //------------- 扫图书 ISBN 码 -----------------
-                include '../servers/BooksInfo.class.php';
-                $BooksInfo = new BooksInfo(); 
-                $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
+                // include '../servers/BooksInfo.class.php';
+                // $BooksInfo = new BooksInfo(); 
+                // $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
-                //$content =  $isbn;
-                $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
+                $content =  $isbn;
+                //$this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
 
 				break;
 
