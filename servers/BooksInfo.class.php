@@ -44,7 +44,7 @@ class BooksInfo {
 // bookInfoStr;
 // 
 //译者只在有的时候，才显示。
-$bookInfoStr = "作者: {$author} \ 定价: {$bookInfo['price']} \ 出版社: {$bookInfo['publisher']}";
+$bookInfoStr = "作者: {$author}   定价: {$bookInfo['price']}  出版社: {$bookInfo['publisher']}";
 
 		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
 
@@ -58,15 +58,15 @@ $bookInfoStr = "作者: {$author} \ 定价: {$bookInfo['price']} \ 出版社: {$
 			);
 
 		//返回,回复消息内容
-		//return $content;
-		return $bookInfo;
+		return $content;
+		//return $bookInfo;
     }
 }
 
 // //----------------    test post   --------------------
 
-// $BooksInfo = new BooksInfo();
-// $output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
-// print_r($output) ;
+$BooksInfo = new BooksInfo();
+$output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
+print_r($output) ;
 // // echo $output;
 
