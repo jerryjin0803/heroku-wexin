@@ -36,22 +36,23 @@ class BooksInfo {
 		$translator = join(' / ',$bookInfo['translator']);	//译者是个 array 要转 string
 		$images	= $bookInfo['images']['large'];	//取出书的封面图
 
-//拼接文本内容
-$bookInfoStr = <<<bookInfoStr
-作者: {$author}
+		//拼接文本内容
+		$bookInfoStr = <<<bookInfoStr
+作者: {$author}%s
+定价: {$bookInfo['price']}
+出版社: {$bookInfo['publisher']}
+出版年: {$bookInfo['pubdate']}
 页数: {$bookInfo['pages']}
 装帧: {$bookInfo['binding']}
-定价: {$bookInfo['price']}
-出版年: {$bookInfo['pubdate']}
 ISBN码: {$bookInfo['isbn13']}
-出版社: {$bookInfo['publisher']}
 bookInfoStr;
 // 
 // //译者只在有的时候，才显示。
 // $bookInfoStr = "作者: {$author} ". PHP_EOL ." {$bookInfo['price']}
 // {$bookInfo['publisher']} / {$bookInfo['pages']}页 / {$bookInfo['binding']} / {$bookInfo['pubdate']} 出版";
-
-		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
+// 
+		//译者只在有的时候，才显示。
+		$bookInfoStr = sprintf($bookInfoStr, count($translator) ? PHP_EOL."译者: ".$translator.PHP_EOL : '');
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array();
