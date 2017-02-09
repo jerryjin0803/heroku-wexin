@@ -178,7 +178,7 @@
 
             case "scancode_push":
                 //这事件一触发，微信就显示它息的界面了。后台貌似只能记录下信息什么的。
-                //$content = "scancode_push 扫码得到结果： ".$object->EventKey;
+                $content = "scancode_push 扫码得到结果： ".$object->EventKey;
 
                 break;
 			//--------------------------  菜单点击事件 --------------------------

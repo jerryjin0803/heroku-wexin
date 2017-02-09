@@ -26,6 +26,10 @@ class BooksInfo {
 		//查寻图书信息，并处理好回复内容。
 		$bookApi = new BookAPI();
 		$bookInfo = $bookApi->isbn($isbn);
+
+		if ($bookInfo['code'] == 6000) {
+			return "你一定是扫了个“假”条码！ 233333333333 ";
+		}
 		
 		//提取信息
 		$author = join(' / ',$bookInfo['author']);	//作者是个 array 要转 string
@@ -66,7 +70,7 @@ $bookInfoStr = "作者: {$author} / {$bookInfo['price']} / {$bookInfo['publisher
 // //----------------    test post   --------------------
 
 // $BooksInfo = new BooksInfo();
-// $output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
+// $output =  $BooksInfo->isbn("9787544270878x"); // 9787111135104
 // print_r($output) ;
 // // echo $output;
 
