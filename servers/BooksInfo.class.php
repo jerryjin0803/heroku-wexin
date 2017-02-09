@@ -52,7 +52,7 @@ bookInfoStr;
 // {$bookInfo['publisher']} / {$bookInfo['pages']}页 / {$bookInfo['binding']} / {$bookInfo['pubdate']} 出版";
 // 
 		//译者只在有的时候，才显示。
-		$bookInfoStr = sprintf($bookInfoStr, count($translator) ? PHP_EOL."译者: ".$translator.PHP_EOL : '');
+		$bookInfoStr = sprintf($bookInfoStr, $translator ? PHP_EOL."译者: ".$translator : '');
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array();

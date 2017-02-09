@@ -72,7 +72,8 @@ class BookAPI {
 
 // //-------------- test code ------------------------
 // $BookAPI = new BookAPI();
-// print_r($BookAPI->isbn("9787111135104")) ;
+// //print_r($BookAPI->isbn("9787111135104")) ;
+// print_r($BookAPI->isbn("9787547609491")) ;
 
 
 
