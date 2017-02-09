@@ -172,6 +172,7 @@
                 include '../servers/BooksInfo.class.php';
                 $BooksInfo = new BooksInfo(); 
                 $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
+                $content = $content[0]['Description'];
                 //----------------------------------------------
                 //$content =  $isbn;
                 $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.print_r($content));
