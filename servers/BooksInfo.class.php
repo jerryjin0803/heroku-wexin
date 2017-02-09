@@ -37,19 +37,19 @@ class BooksInfo {
 		$images	= $bookInfo['images']['large'];	//取出书的封面图
 
 //拼接文本内容
-// $bookInfoStr = <<<bookInfoStr
-// 作者: {$author}
-// 页数: {$bookInfo['pages']}
-// 装帧: {$bookInfo['binding']}
-// 定价: {$bookInfo['price']}
-// 出版年: {$bookInfo['pubdate']}
-// ISBN码: {$bookInfo['isbn13']}
-// 出版社: {$bookInfo['publisher']}
-// bookInfoStr;
+$bookInfoStr = <<<bookInfoStr
+作者: {$author}
+页数: {$bookInfo['pages']}
+装帧: {$bookInfo['binding']}
+定价: {$bookInfo['price']}
+出版年: {$bookInfo['pubdate']}
+ISBN码: {$bookInfo['isbn13']}
+出版社: {$bookInfo['publisher']}
+bookInfoStr;
 // 
-//译者只在有的时候，才显示。
-$bookInfoStr = "作者: {$author} ". PHP_EOL ." {$bookInfo['price']}
-{$bookInfo['publisher']} / {$bookInfo['pages']}页 / {$bookInfo['binding']} / {$bookInfo['pubdate']} 出版";
+// //译者只在有的时候，才显示。
+// $bookInfoStr = "作者: {$author} ". PHP_EOL ." {$bookInfo['price']}
+// {$bookInfo['publisher']} / {$bookInfo['pages']}页 / {$bookInfo['binding']} / {$bookInfo['pubdate']} 出版";
 
 		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
 
