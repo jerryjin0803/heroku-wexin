@@ -44,7 +44,7 @@ class BooksInfo {
 // bookInfoStr;
 // 
 //译者只在有的时候，才显示。
-$bookInfoStr = "作者: {$author}   定价: {$bookInfo['price']}  出版社: {$bookInfo['publisher']}";
+$bookInfoStr = "作者: {$author} / {$bookInfo['price']} / {$bookInfo['publisher']} / {$bookInfo['pages']} / {$bookInfo['binding']} / {$bookInfo['pubdate']}";
 
 		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
 
