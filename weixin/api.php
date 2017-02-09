@@ -174,7 +174,7 @@
                 $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
                 //$content =  $isbn;
-                $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.join($content));
+                $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.join($content[0]));
 
 				break;
 
