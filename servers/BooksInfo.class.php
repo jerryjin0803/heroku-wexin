@@ -54,19 +54,19 @@ $bookInfoStr = "作者: {$author}   定价: {$bookInfo['price']}  出版社: {$b
 			"Title" => "《".$bookInfo['title']."》", 
 			"Description" => $bookInfoStr, 
 			"PicUrl" => $images, 
-			"Url" => "https://m.douban.com/subject/".$bookInfo['id']
+			"Url" => "https://m.douban.com/book/subject/".$bookInfo['id']
 			);
 
 		//返回,回复消息内容
 		return $content;
-		//return $bookInfo;
+
     }
 }
 
 // //----------------    test post   --------------------
 
-$BooksInfo = new BooksInfo();
-$output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
-print_r($output) ;
+// $BooksInfo = new BooksInfo();
+// $output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
+// print_r($output) ;
 // // echo $output;
 
