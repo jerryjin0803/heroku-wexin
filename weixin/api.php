@@ -160,19 +160,19 @@
 
 			//--------------------------  扫码事件 --------------------------
 			case "scancode_waitmsg":
-                // $content = "scancode_waitmsg 扫码得到结果： ".$object->EventKey ."
-                // ScanType： ".$object->ScanCodeInfo->ScanType ."
-                // ScanResult： ".$object->ScanCodeInfo->ScanResult;				
-                $muneId = $object->EventKey;//创建菜单时的 "key": "rselfmenu_0_0", 
-                $scanType = $object->ScanCodeInfo->ScanType;
-                $scanResult = $object->ScanCodeInfo->ScanResult;
-                $isbn = explode(',',$scanResult)[1]; 
+                $content = "scancode_waitmsg 扫码得到结果： ".$object->EventKey ."
+                ScanType： ".$object->ScanCodeInfo->ScanType ."
+                ScanResult： ".$object->ScanCodeInfo->ScanResult;				
+                // $muneId = $object->EventKey;//创建菜单时的 "key": "rselfmenu_0_0", 
+                // $scanType = $object->ScanCodeInfo->ScanType;
+                // $scanResult = $object->ScanCodeInfo->ScanResult;
+                // $isbn = explode(',',$scanResult)[1]; 
                 //------------- 扫图书 ISBN 码 -----------------
                 // include '../servers/BooksInfo.class.php';
                 // $BooksInfo = new BooksInfo(); 
                 // $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
-                $content =  $isbn;
+                //$content =  $isbn;
                 //$this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
 
 				break;
