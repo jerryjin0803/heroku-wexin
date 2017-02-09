@@ -42,24 +42,24 @@ class BooksInfo {
 // ISBN码: {$bookInfo['isbn13']}
 // 出版社: {$bookInfo['publisher']}
 // bookInfoStr;
+// 
 //译者只在有的时候，才显示。
-$bookInfoStr = "作者: {$author}".$translator ? "\n译者: ".$translator : ''."\n定价: {$bookInfo['price']}
-\n出版社: {$bookInfo['publisher']}";
+$bookInfoStr = "作者: {$author} \ 定价: {$bookInfo['price']} \ 出版社: {$bookInfo['publisher']}";
 
-		
 		//$result = sprintf($bookInfoStr, $translator ? "\n译者: ".$translator : '');
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array();
 		$content[] = array(
-			"Title" => $bookInfo['title'], 
+			"Title" => "《".$bookInfo['title']."》", 
 			"Description" => $bookInfoStr, 
 			"PicUrl" => $images, 
-			"Url" => "http://www.baidu.com"
+			"Url" => "https://m.douban.com/subject/".$bookInfo['id']
 			);
 
 		//返回,回复消息内容
-		return $content;
+		//return $content;
+		return $bookInfo;
     }
 }
 
