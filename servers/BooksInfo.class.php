@@ -65,8 +65,8 @@ $bookInfoStr = "作者: {$author} \ 定价: {$bookInfo['price']} \ 出版社: {$
 
 // //----------------    test post   --------------------
 
-$BooksInfo = new BooksInfo();
-$output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
-print_r($output) ;
+// $BooksInfo = new BooksInfo();
+// $output =  $BooksInfo->isbn("9787544270878"); // 9787111135104
+// print_r($output) ;
 // // echo $output;
 
