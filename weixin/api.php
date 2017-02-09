@@ -1,4 +1,5 @@
 <?php
+
     //设置下时区
 	date_default_timezone_set('Asia/Shanghai');
     
@@ -173,7 +174,7 @@
                 $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
                 //$content =  $isbn;
-                //$this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
+                $this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.join($content));
 
 				break;
 
