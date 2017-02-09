@@ -172,7 +172,7 @@
                 // $BooksInfo = new BooksInfo(); 
                 // $content =  $BooksInfo->isbn($isbn);//获得回复消息XML
                 //----------------------------------------------
-                $content =  $isbn + "联轼 要  ";
+                $content =  $isbn . "联轼 要  ";
                 //$this->logger("<WX Request>----------------  BooksInfo-> isbn( $isbn) ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$content);
 
 				break;
