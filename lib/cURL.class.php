@@ -1,17 +1,34 @@
 <?php
 
 /*
-	---------  POST 发送 string  参数  ------------
+	---------  POST 发送 string  参数，服务器获取情况  ------------
 	var_dump($_SERVER);								//获取到 服务器方面的参数
 	var_dump(@file_get_contents('php://input'));	//获取到 所传参数 string 形式
 	var_dump($_POST);								//获取到 所传参数 array() 形式
 	var_dump($GLOBALS["HTTP_RAW_POST_DATA"]);		//获取到 NULL
 
-	---------  POST 发送 array() 参数  ------------
+	---------  POST 发送 array() 参数，服务器获取情况  ------------
 	var_dump($_SERVER);								//获取到 服务器方面的参数
 	var_dump(@file_get_contents('php://input'));	//获取到 空 string  
 	var_dump($_POST);								//获取到 所传参数 array() 形式
 	var_dump($GLOBALS["HTTP_RAW_POST_DATA"]);		//获取到 NULL
+
+	//--------------POST 参数字符串写法----------------
+	//$postData = 'api_key=' . $this->api_key . '&api_secret=' . $this->api_secret . '&image_url='. $image . '&alegality=' . $legality;
+	//--------------POST 参数数组写法 一  ----------------
+	$postData = array(
+		'api_key' => $this->api_key,
+		'api_secret' => $this->api_secret,
+		'image_url' => $image,
+		'legality' => $legality
+	);
+	//--------------POST 参数数组写法 二 ----------------
+	// $postData = array();
+	// $postData['api_key'] = $this->api_key;
+	// $postData['api_secret'] = $this->api_secret;
+	// $postData['image_url'] = $image;
+	// $postData['legality'] = $legality;
+
  */
 
 class cURL {
@@ -59,6 +76,8 @@ class cURL {
 	    curl_setopt($curl, CURLOPT_HEADER, false);	
 	    //设置获取的信息以文件流的形式返回，而不是直接输出。
 	    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+	    //FALSE 禁止 cURL 验证对等证书（peer's certificate）。要验证的交换证书可以在 CURLOPT_CAINFO 选项中设置，或在 CURLOPT_CAPATH中设置证书目录。
+	    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 	    //设置post方式提交
 	    //curl_setopt($curl, CURLOPT_POST, 1);
 	    //设置post方式提交
