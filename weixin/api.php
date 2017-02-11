@@ -350,11 +350,19 @@ include_once '../servers/FacePlusPlusWX.class.php';
         //         $result = $this->transmitImage($object, $content);
         //         break;
         // }
-        // 
-        $fppi = new FacePlusPlusWX();
-        $url = $object->PicUrl;
-        $content =  $fppi->faceDetectWX($url); 
         
+        //从微信公众号服务端下载资源
+        $mediaId = $object->MediaId;
+        $image = Media::download($mediaId);
+        //保存到本地
+        $fileManage = new FileManage();
+        $fileManage->saveImage($image, $mediaId);
+        //heroku 服务器上的 URL 
+        $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
+        //请求识别图像
+        $fppi = new FacePlusPlusWX();
+        $content =  $fppi->faceDetectWX($url); 
+
         //处理回复消息内容
         if(is_array($content)){
             if (isset($content[0]['PicUrl'])){
