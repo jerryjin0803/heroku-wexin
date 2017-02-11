@@ -353,7 +353,18 @@ include_once '../servers/FacePlusPlusWX.class.php';
         // 
         $fppi = new FacePlusPlusWX();
         $url = $object->PicUrl;
-        $result =  $fppi->faceDetectWX($url); 
+        $content =  $fppi->faceDetectWX($url); 
+        
+        //处理回复消息内容
+        if(is_array($content)){
+            if (isset($content[0]['PicUrl'])){
+                $result = $this->transmitNews($object, $content);
+            }else if (isset($content['MusicUrl'])){
+                $result = $this->transmitMusic($object, $content);
+            }
+        }else{
+            $result = $this->transmitText($object, $content);
+        }
 
         return $result;
     }
