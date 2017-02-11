@@ -351,11 +351,11 @@ include_once '../servers/FacePlusPlusWX.class.php';
         //         break;
         // }
         // 
-        // $fppi = new FacePlusPlusWX();
-        // $url = $object->PicUrl;
-        // $result =  $fppi->faceDetectWX($url); 
+        $fppi = new FacePlusPlusWX();
+        $url = $object->PicUrl;
+        $result =  $fppi->faceDetectWX($url); 
 
-        return $object->PicUrl;
+        return $result;
     }
 
     //接收位置消息
