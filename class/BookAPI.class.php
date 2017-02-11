@@ -21,7 +21,7 @@
 6013	chapter_too_long(should less than 100)	章节名过长（需小于100字）	400
 */
 
-include '../lib/cURL.class.php';
+include_once '../lib/cURL.class.php';
 
 class BookAPI {
 	private $serverUrl = "https://api.douban.com";
@@ -53,7 +53,7 @@ class BookAPI {
 		//echo $url;
 		$curl = new cURL();	//实例化一个 cURL
 		$book = $curl->get($url);	//发送 GET 请求,返回结果
-		$book = $this->analyzeBookInfo($book);	//解析数据，格式化，以便调用
+		$book = $this->json2Array($book);	//解析数据，格式化，以便调用
 
 		return $book;
 	}
@@ -63,9 +63,9 @@ class BookAPI {
 	 * @param  string $book 原始数据JSON
 	 * @return array       格式化后的数组
 	 */
-	function analyzeBookInfo($book){
-		$book_array = (array) json_decode($book, true);
-		return $book_array;
+	function json2Array($json_data){
+		$array_data = (array) json_decode($json_data, true);
+		return $array_data;
 	}
 	
 }

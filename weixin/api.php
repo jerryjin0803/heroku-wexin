@@ -1,5 +1,9 @@
 <?php
 
+include_once '../lib/FileManage.class.php';
+include_once '../lib/media.lib.php';
+include_once '../servers/FacePlusPlusWX.class.php';
+
     //设置下时区
 	date_default_timezone_set('Asia/Shanghai');
     
@@ -66,45 +70,45 @@
 	//如果接收到了就处理并回复
 	if (!empty($postStr)){
 	    //将接收到的XML字符串写入日志， 用R标记表示接收消息
-	    $this->logger("<WX Request>---------------- 接收事件推送 ---- ".date('H:i:s')." ---------<WX Request>".PHP_EOL.$postStr);
+	    $this->logger("<WX Request>---------------- 接收事件推送 ---- ".date('Y-m-d H:i:s')." ---------<WX Request>".PHP_EOL.$postStr);
 	    //将接收的消息处理返回一个对象
 	    $postObj = simplexml_load_string($postStr, 'SimpleXMLElement', LIBXML_NOCDATA);
 
 	    //从消息对象中获取消息的类型 text  image location voice vodeo link 
             $RX_TYPE = trim($postObj->MsgType);
              
-            //消息类型分离, 通过RX_TYPE类型作为判断， 每个方法都需要将对象$postObj传入
-            switch ($RX_TYPE)
+        //消息类型分离, 通过RX_TYPE类型作为判断， 每个方法都需要将对象$postObj传入
+        switch ($RX_TYPE)   
 	    {
 
-             	case "event":
-					$result = $this->receiveEvent($postObj);     //事件消息
-					break;
-                case "text":
-                    $result = $this->receiveText($postObj);     //接收文本消息
-                    break;
-                case "image":
-                    $result = $this->receiveImage($postObj);   //接收图片消息
-                    break;
-                case "location":
-                    $result = $this->receiveLocation($postObj);  //接收位置消息
-                    break;
-                case "voice":
-                    $result = $this->receiveVoice($postObj);   //接收语音消息 -----
-                    break;
-                case "video":
-                    $result = $this->receiveVideo($postObj);  //接收视频消息
-                    break;
-                case "link":
-                    $result = $this->receiveLink($postObj);  //接收链接消息
-                    break;
-                default:
-                    $result = "unknown msg type: ".$RX_TYPE;   //未知的消息类型
-                    break;
+         	case "event":
+				$result = $this->receiveEvent($postObj);     //事件消息
+				break;
+            case "text":
+                $result = $this->receiveText($postObj);     //接收文本消息
+                break;
+            case "image":
+                $result = $this->receiveImage($postObj);   //接收图片消息
+                break;
+            case "location":
+                $result = $this->receiveLocation($postObj);  //接收位置消息
+                break;
+            case "voice":
+                $result = $this->receiveVoice($postObj);   //接收语音消息 -----
+                break;
+            case "video":
+                $result = $this->receiveVideo($postObj);  //接收视频消息
+                break;
+            case "link":
+                $result = $this->receiveLink($postObj);  //接收链接消息
+                break;
+            default:
+                $result = "unknown msg type: ".$RX_TYPE;   //未知的消息类型
+                break;
 	    }
 	    //将响应的消息再次写入日志， 使用T标记响应的消息！
 
-            $this->logger("<Dev Respone>--------开发服回复 ---- ".date('H:i:s')." ---------<Dev Respone>".PHP_EOL.$result);
+            $this->logger("<Dev Respone>--------开发服回复 ---- ".date('Y-m-d H:i:s')." ---------<Dev Respone>".PHP_EOL.$result);
 	    //输出消息给微信
 	    echo $result;
 	}else {
@@ -319,9 +323,39 @@
     //接收图片消息
     private function receiveImage($object)
     {
-        $content = array("MediaId"=>$object->MediaId);
-        $result = $this->transmitImage($object, $content);
-        return $result;
+        // //判断是普通发图片，还是菜单开启的图像识别
+        // switch ($object->EventKey)//创建菜单时的 "key": "rselfmenu_0_0", 
+        // {
+        //     //人脸识别        
+        //     case "faceDetect":
+            
+        //         break;
+        //     //身份证识别
+        //     case "ocrIdCard":
+
+        //         break;
+        //     //驾驶证
+        //     case "ocrDriverLicense":
+
+
+        //         break;
+        //     //行驶证
+        //     case "ocrVehicleLicense":
+
+
+        //         break;
+        //     //图像识别
+        //     default:
+        //         $content = array("MediaId"=>$object->MediaId);
+        //         $result = $this->transmitImage($object, $content);
+        //         break;
+        // }
+        // 
+        // $fppi = new FacePlusPlusWX();
+        // $url = $object->PicUrl;
+        // $result =  $fppi->faceDetectWX($url); 
+
+        return $object->PicUrl;
     }
 
     //接收位置消息
