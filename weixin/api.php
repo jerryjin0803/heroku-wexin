@@ -330,17 +330,21 @@ class Wechat {
         return $result;
     }
 
-    //接收图片消息
+    //接收图片消息        echo str_pad('',4096);
     private function receiveImage($object)
     {
         //动态输出空字符串，微信收到后就不会报超时了。
         //之后的代码还可以继续。
-        echo str_pad('',4096);
-        //
-        //print str_repeat("", 4096);
+
+        //输出空字符串，让微信收到后就不会报超时。
+        print str_repeat("", 4096);
         echo '';
         ob_flush();
         flush(); 
+        // //图版分析功能。时间较长。
+        // $fppi = new FacePlusPlusWX();
+        // $content =  $fppi->faceDetectWX($url); 
+
 
         $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
