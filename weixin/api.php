@@ -382,34 +382,39 @@ class Wechat {
         {
             //人脸识别        
             case "faceDetect":
-                $content = "人脸识别";
-                //$content =  $fppi->faceDetectWX($url); 
+                //$content = "人脸识别";
+                $content =  $fppi->faceDetectWX($url); 
 
                 break;
             //场景物体
             case "detectSceneAndObject":
                 //$content = "场景物体";
-                $content =  $fppi->faceDetectWX($url); 
+                $content =  $fppi->detectSceneAndObjectWX($url); 
 
                 break;
             //驾照识别
             case "ocrDriverLicense":
-                $content = "驾照识别";
+                // $content = "驾照识别";
+                $content =  $fppi->ocrDriverLicenseWX($url); 
 
                 break;
             //行驶证识别
             case "ocrVehicleLicense":
-                $content = "行驶证识别";
+                // $content = "行驶证识别";
+                $content =  $fppi->ocrVehicleLicenseWX($url); 
+
                 break;
             //二代身份证
             case "ocrIdCard":
-                $content = "二代身份证";
+                // $content = "二代身份证";
+                $content =  $fppi->ocrIdCardWX($url); 
+
                 break;
             //普通发图
             default:
                 // $content = array("MediaId"=>$object->MediaId);
                 // $result = $this->transmitImage($object, $content);
-                $content = "普通图片消息";
+                $content = "诶呦！这张不错哦[机智]";
                 break;
         }
         
@@ -464,7 +469,7 @@ class Wechat {
 
     	//如果开启语言识别功能， 就可以使用这个
         if (isset($object->Recognition) && !empty($object->Recognition)){
-            $content = "你刚才说的是：".$object->Recognition;
+            $content = "你说的是：“".$object->Recognition."” 是吗？我听不清呢，你大点声[睡]";
             $result = $this->transmitText($object, $content);
         }else{
             $content = array("MediaId"=>$object->MediaId);
