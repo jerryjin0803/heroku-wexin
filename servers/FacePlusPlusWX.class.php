@@ -219,7 +219,7 @@ responseInfo;
 }
 // //----------------    test post   --------------------
 
-$fppi = new FacePlusPlusWX();
+// $fppi = new FacePlusPlusWX();
 // //  $url = "http://news.xinhuanet.com/photo/2013-07/25/11118125064696_1981d.jpg";
 // // // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
 
@@ -236,8 +236,8 @@ $fppi = new FacePlusPlusWX();
 // $output =  $fppi->ocrDriverLicenseWX($url); 
 
 //机动车行驶证
-$url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
-$output = $fppi->ocrVehicleLicenseWX($url);
+// $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
+// $output = $fppi->ocrVehicleLicenseWX($url);
 
 // //身份证识别
 // // $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
@@ -245,11 +245,11 @@ $output = $fppi->ocrVehicleLicenseWX($url);
 // // $output = $fppi->ocrIdCardWX($url);
 
 // print_r($output);
-// 发消息部分。可以公用
-$url = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA/0";
-$output['picurl'] = $url;
-$output['url'] = $url;
+// // 发消息部分。可以公用
+// $url = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA/0";
+// $output['picurl'] = $url;
+// $output['url'] = $url;
 
-$openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
-$serverMsg = new ServerMsg();
-$serverMsg->send($openId, $output,'news');
+// $openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
+// $serverMsg = new ServerMsg();
+// $serverMsg->send($openId, $output,'news');
