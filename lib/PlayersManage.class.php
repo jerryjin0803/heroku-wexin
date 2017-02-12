@@ -2,7 +2,7 @@
 
 class PlayersManage {
 
-    const PLAYER_DATA = 'player_data.txt'; //玩家临时数据存放文件
+    const PLAYER_DATA = './player_data.txt'; //玩家临时数据存放文件
 
     public static function setPlayerInfo($openId ,$key , $value)
     {
@@ -39,7 +39,7 @@ class PlayersManage {
         return $allPlayerInfoArray[$openId][$key];
     }
 }
-//PlayersManage::setPlayerMenuOperate('openId5345345435','key2323', 'vvvvvvvvvvvvvvvvvvvvvvvvg');
-// echo PlayersManage::getPlayerInfo('openId','key1');
+// PlayersManage::setPlayerInfo('openIsdfsesd5','key', 'fssssssssssssssssssssss');
+// echo PlayersManage::getPlayerInfo();
 // print_r((json_decode(PlayersManage::getPlayerInfo(), true)));
 ?>

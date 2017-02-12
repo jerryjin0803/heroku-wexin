@@ -110,7 +110,7 @@ class Wechat {
 
             //将响应的消息再次写入日志， 使用T标记响应的消息！
             $this->logger("<Dev Respone>--------开发服回复 ---- ".date('Y-m-d H:i:s')." ---------<Dev Respone>".PHP_EOL.$result);
-        }else {
+        }else{
             //如果没有消息则输出空，并退出
             echo "";
             exit;
@@ -234,17 +234,21 @@ class Wechat {
             case "pic_sysphoto":
             case "pic_photo_or_album":
               // //不管三七二十一，先把触发的事件存下来。后后续如图像识别的功能，可以按不同事件做相应类别的识别。最终用客服消息接口回复
-                $openId = $object->FromUserName;
-                $playInfoKey = 'EventKey';
-                $playInfoValue = $object->EventKey;
-                PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
+                // $openId = 'oCm6Zw0CCqvl4F6Qpuso0mLBouh0';//$object->FromUserName;
+                // $playInfoKey = 'EventKey';
+                // $playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
+                // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
-                //准备发送客服消息          
-                $openId = $object->FromUserName;
-                $serverMsg = new ServerMsg();
-                $serverMsg->send($openId, PlayersManage::getPlayerInfo(),'text');
+                // //准备发送客服消息          
+                // $openId = $object->FromUserName;
+                // $serverMsg = new ServerMsg();
+                // $serverMsg->send($openId, PlayersManage::getPlayerInfo(),'text');
 
-                $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
+                // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
+$openId = 'oCm6Zw0CCqvl4F6Qpuso0mLBouh0';//$object->FromUserName;
+$playInfoKey = 'EventKey';
+$playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
+PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
@@ -612,6 +616,3 @@ class Wechat {
         
     }
 }
-
-?>
-
