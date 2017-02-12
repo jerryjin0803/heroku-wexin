@@ -339,7 +339,7 @@ class Wechat {
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
         //trtolower($playerLastOperate)
         //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
-        switch ('ocrDriverLicense')//创建菜单时的 "key": "rselfmenu_0_0", 
+        switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
         {
             //人脸识别        
             case "faceDetect":
