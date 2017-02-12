@@ -403,7 +403,7 @@ class Wechat {
         $content['picurl']= $object->PicUrl;
         $content['url']= $object->PicUrl;
 
-        $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        // $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
         //正常回复消息。
         //$result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId);//.' +++ '. $playerLastOperate);
@@ -413,7 +413,8 @@ class Wechat {
 
         //准备发送客服消息
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, '客服消息：'.$result,'text');
+        // $serverMsg->send($openId, '客服消息：'.$result,'text');
+        $serverMsg->send($openId, $content,'news');
         //exit;
         return $result;
     }
