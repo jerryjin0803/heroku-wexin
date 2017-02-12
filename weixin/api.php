@@ -392,10 +392,10 @@ class Wechat {
         $mediaId = "{$object->MediaId}";
         $image = Media::download($mediaId);
         //保存到本地
-        // $fileManage = new FileManage();
-        // $fileManage->saveImage($image, $mediaId);
+        $fileManage = new FileManage();
+        $fileManage->saveImage($image, $mediaId);
         // //heroku 服务器上的 URL 
-        // $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
+        $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
         // //$path = '@./images/'.$mediaId.'.jpg';
         // //请求识别图像
         // $fppi = new FacePlusPlusWX();
