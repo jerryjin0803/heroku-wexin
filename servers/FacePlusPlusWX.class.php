@@ -35,7 +35,7 @@ class FacePlusPlusWX {
 			return '我靠。。。操作失败：' . PHP_EOL . $imageInfo['error_message'];
 		}
 		if (!count($imageInfo['faces'])) {
-			return '你确定你拍的是张“脸” ？？？';
+			return '你确定你拍的是张“脸” [抠鼻]？可能离太远或太近了，给个好点的角度嘛[撇嘴]';
 		}
 
 		// $attributes= Array(

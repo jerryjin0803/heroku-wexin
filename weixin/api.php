@@ -386,7 +386,7 @@ class Wechat {
         
         //创建客服消息对象
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, '拼命识别中。。。{PHP_EOL}这是技术活，可能要点时间，请耐心等待。。。','text');
+        $serverMsg->send($openId, "拼命识别中[奋斗]...{PHP_EOL}这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
 
         //从微信公众号服务端下载资源
         $mediaId = "{$object->MediaId}";
@@ -411,7 +411,7 @@ class Wechat {
             // $serverMsg->send($openId, '客服消息：'.$result,'text');
             $serverMsg->send($openId, $content,'news');
         }else{
-            $serverMsg->send($openId, $content.PHP_EOL.$url,'text');
+            $serverMsg->send($openId, $content.PHP_EOL.{$object->PicUrl},'text');
         }
 
         // //正常回复消息。
