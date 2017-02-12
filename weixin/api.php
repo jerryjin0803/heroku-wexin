@@ -333,6 +333,8 @@ class Wechat {
     //接收图片消息
     private function receiveImage($object)
     {
+        //回复空字符串，免得微信报超时
+        echo "";
 
         $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
@@ -399,8 +401,8 @@ class Wechat {
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
 
         //准备发送客服消息
-        $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $result,'text');
+        // $serverMsg = new ServerMsg();
+        // $serverMsg->send($openId, $result,'text');
 
         return $result;
     }
