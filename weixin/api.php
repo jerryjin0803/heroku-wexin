@@ -411,7 +411,7 @@ class Wechat {
             // $serverMsg->send($openId, '客服消息：'.$result,'text');
             $serverMsg->send($openId, $content,'news');
         }else{
-            $serverMsg->send($openId, $content.PHP_EOL.{$object->PicUrl},'text');
+            $serverMsg->send($openId, $content.PHP_EOL."{$object->PicUrl}",'text');
         }
 
         // //正常回复消息。
