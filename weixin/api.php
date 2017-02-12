@@ -409,6 +409,7 @@ class Wechat {
             // $serverMsg->send($openId, '客服消息：'.$result,'text');
             $serverMsg->send($openId, $content,'news');
         }else{
+            $serverMsg = new ServerMsg();
             $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
         }
 
