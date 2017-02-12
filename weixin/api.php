@@ -406,8 +406,8 @@ class Wechat {
         //准备发送客服消息
 
         if (is_array($content)) {
-            $content['picurl']= "{$object->PicUrl}";
-            $content['url']= "{$object->PicUrl}";
+            $content['picurl'] = "{$object->PicUrl}";
+            $content['url'] = "{$object->PicUrl}";
             // $serverMsg->send($openId, '客服消息：'.$result,'text');
             $serverMsg->send($openId, $content,'news');
         }else{
