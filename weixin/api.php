@@ -353,24 +353,42 @@ class Wechat {
             echo "";
             exit;
          };
-        //写入
+        //保存 msgId 
         PlayersManage::setPlayerInfo($openId, $msgId, 'processing');
+
+        //创建客服消息对象
+        $serverMsg = new ServerMsg();
+        //开始前先发条消息，告诉用户骚等
+        $serverMsg->send($openId, $msgId.PHP_EOL. "拼命识别中[奋斗]...这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
+
+        //从微信公众号服务端下载资源
+        $mediaId = "{$object->MediaId}";
+        $image = Media::download($mediaId);
+        //保存到本地
+        $fileManage = new FileManage();
+        $fileManage->saveImage($image, $mediaId);
+        // //heroku 服务器上的 URL 
+        $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
+        // //$path = '@./images/'.$mediaId.'.jpg';
+        //请求识别图像
+        $fppi = new FacePlusPlusWX();
 
         //调取菜单点击的记录
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
-        //trtolower($playerLastOperate)
         //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
         switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
         {
             //人脸识别        
             case "faceDetect":
                 $content = "人脸识别";
+                //$content =  $fppi->faceDetectWX($url); 
 
                 break;
             //场景物体
             case "detectSceneAndObject":
-                $content = "场景物体";
+                //$content = "场景物体";
+                $content =  $fppi->faceDetectWX($url); 
 
                 break;
             //驾照识别
@@ -394,27 +412,9 @@ class Wechat {
                 break;
         }
         
-        //创建客服消息对象
-        $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $msgId.PHP_EOL. "拼命识别中[奋斗]...这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
-
-        //从微信公众号服务端下载资源
-        $mediaId = "{$object->MediaId}";
-        $image = Media::download($mediaId);
-        //保存到本地
-        $fileManage = new FileManage();
-        $fileManage->saveImage($image, $mediaId);
-        // //heroku 服务器上的 URL 
-        $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
-        // //$path = '@./images/'.$mediaId.'.jpg';
-        //请求识别图像
-        $fppi = new FacePlusPlusWX();
-        $content =  $fppi->faceDetectWX($url); 
-
         //$content = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
         //准备发送客服消息
-
         if (is_array($content)) {
             $content['picurl'] = "{$object->PicUrl}";
             $content['url'] = "{$object->PicUrl}";
@@ -424,8 +424,8 @@ class Wechat {
             $serverMsg->send($openId, $content.PHP_EOL."{$object->PicUrl}",'text');
         }
 
-        // //正常回复消息。
-        $result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
+        //正常回复消息。
+        //$result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
