@@ -8,7 +8,7 @@ class ServerMsg{
     private $apiUrl = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='; 
 
     //按类型别分处理JSON格式数据，然后调用发送
-    public static function send($openId, $msgData, $msgType){
+    public function send($openId, $msgData, $msgType){
 
         $jsonMsg = '';
         //获取对应类型的回复消息(格式为数组,后面正式发之前会转成JSON)
@@ -69,8 +69,8 @@ class ServerMsg{
             'news' => Array(
                     'articles' => Array(
                             '0' => Array(
-                                    'title' => $data['Title'],
-                                    'description' =>  $data['Description'],
+                                    'title' => $data['title'],
+                                    'description' =>  $data['description'],
                                     'picurl' =>  $data['url'],
                                     'url' =>  $data['url']
                                 )
@@ -86,12 +86,23 @@ class ServerMsg{
 
 // $openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
 // $serverMsg = new ServerMsg();
-// $serverMsg->send($openId, '测试内容','news');
+// $serverMsg->send($openId, '测试内容','text');
 
-// $postData = '{"touser":"oCm6Zw0CCqvl4F6Qpuso0mLBouh0","msgtype":"news","news":{"articles":[{"title":"Happy Day","description":"Is Really A Happy Day","url":"http://www.baidu.com","picurl":"http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3OdyjqcnA2nLGiaVavwyGFIwgTk122UUxzpOibA6gEkZjv4UC91oN7hM9XUWOPQZ720tTQ/0"},{"title":"Happy Day","description":"Is Really A Happy Day","url":"http://www.baidu.com","picurl":"http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3OdyjqcnA2nLGiaVavwyGFIwgTk122UUxzpOibA6gEkZjv4UC91oN7hM9XUWOPQZ720tTQ/0"}]}}';
-// $apiUrl = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=';
+// $openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
+// $images = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3OdyjqcnA2nLGiaVavwyGFIwgTk122UUxzpOibA6gEkZjv4UC91oN7hM9XUWOPQZ720tTQ/0";
+// $postData = array(
+//     "title" => 'WARNING！！！发现'.$gender . "靓照", 
+//     "description" => '图文消息测试', 
+//     'picurl' =>  $images,
+//     "url" => $images
+// );
+// $serverMsg = new ServerMsg();
+// $serverMsg->send($openId, $postData,'news');
+
+
+
+//$postData = '{"touser":"oCm6Zw0CCqvl4F6Qpuso0mLBouh0","msgtype":"news","news":{"articles":[{"title":"Happy Day","description":"Is Really A Happy Day","url":"http://www.baidu.com","picurl":"http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3OdyjqcnA2nLGiaVavwyGFIwgTk122UUxzpOibA6gEkZjv4UC91oN7hM9XUWOPQZ720tTQ/0"},{"title":"Happy Day","description":"Is Really A Happy Day","url":"http://www.baidu.com","picurl":"http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3OdyjqcnA2nLGiaVavwyGFIwgTk122UUxzpOibA6gEkZjv4UC91oN7hM9XUWOPQZ720tTQ/0"}]}}';
 // $url = $apiUrl . AccessToken::getAccessToken();
-
 // echo  $url ;
 // $ch = new cURL();   //实例化一个 cURL
 // $output = $ch->post($url, $postData);   //发送 POST 请求,返回结果
