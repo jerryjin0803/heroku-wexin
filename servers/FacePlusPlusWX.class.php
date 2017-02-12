@@ -88,7 +88,7 @@ responseInfo;
 		//上传图片识别返回结果
 		$imageInfo = $this->faceppApi->detectSceneAndObject($images);
 
-		$contentText = "这可能是 {$imageInfo['scenes'][0]['value']}，在 {$imageInfo['objects'][0]['value']}。"; 
+		$contentText = "这可能是 {$imageInfo['objects'][0]['value']}，在 {$imageInfo['scenes'][0]['value']}。"; 
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
@@ -182,15 +182,15 @@ responseInfo;
 
 		if ($side == 'front') {
 			$contentText = "[姓名] => {$imageInfo['name']} 
-[性别] => {$imageInfo['gender']}
-[民族] => {$imageInfo['race']}
-[生日] => {$imageInfo['birthday']}
-[住址] => {$imageInfo['address']}
+[性别]  :  {$imageInfo['gender']}
+[民族]  :  {$imageInfo['race']}
+[生日]  :  {$imageInfo['birthday']}
+[住址]  :  {$imageInfo['address']}
 [身份证号] => {$imageInfo['id_card_number']}
 ";
 		}else{
-			$contentText = "[签发机关] => {$imageInfo['issued_by']}
-[有效日期] => {$imageInfo['valid_date']} ";
+			$contentText = "[签发机关]  :  {$imageInfo['issued_by']}
+[有效日期]  :  {$imageInfo['valid_date']} ";
 		}
 
 //可信度参数
