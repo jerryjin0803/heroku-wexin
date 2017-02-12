@@ -87,8 +87,9 @@ responseInfo;
 	{
 		//上传图片识别返回结果
 		$imageInfo = $this->faceppApi->detectSceneAndObject($images);
-
-		$contentText = "这可能是 {$imageInfo['objects'][0]['value']}，在 {$imageInfo['scenes'][0]['value']}。"; 
+		$objects = $imageInfo['objects'][0]['value'];
+		$scenes = $imageInfo['scenes'][0]['value'];
+		$contentText = "这可能是 $objects ，在 $scenes。"; 
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
@@ -112,18 +113,18 @@ responseInfo;
 		// print_r($imageInfo);
 		// return '测试直接跳出';
 		$version = array('1'=>'2013版本驾驶证','2'=>'2008或更早版本驾驶证')[$imageInfo['version']];
-		$contentText = "[驾驶证号] => {$imageInfo['license_number']}
-[姓名] => {$imageInfo['name']}
-[性别] => {$imageInfo['gender']}
-[国籍] => {$imageInfo['nationality']}
-[住址] => {$imageInfo['address']}
-[生日] => {$imageInfo['birthday']}
-[驾照版本] => {$version}
-[初次领证] => {$imageInfo['issue_date']}
-[准驾车型] => {$imageInfo['class']}
-[有效日期] => {$imageInfo['valid_from']}
-[有效年限] => {$imageInfo['valid_for']}
-[签发机关] => {$imageInfo['issued_by']}";
+		$contentText = "[驾驶证号]  :  {$imageInfo['license_number']}
+[姓名]  :  {$imageInfo['name']}
+[性别]  :  {$imageInfo['gender']}
+[国籍]  :  {$imageInfo['nationality']}
+[住址]  :  {$imageInfo['address']}
+[生日]  :  {$imageInfo['birthday']}
+[驾照版本]  :  {$version}
+[初次领证]  :  {$imageInfo['issue_date']}
+[准驾车型]  :  {$imageInfo['class']}
+[有效日期]  :  {$imageInfo['valid_from']}
+[有效年限]  :  {$imageInfo['valid_for']}
+[签发机关]  :  {$imageInfo['issued_by']}";
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
@@ -147,17 +148,17 @@ responseInfo;
 
 		// print_r($imageInfo);
 		// return '测试直接跳出';
-		$contentText = "[号牌号码] => {$imageInfo['plate_no']}
-[车辆类型] => {$imageInfo['vehicle_type']}
-[所有人] => {$imageInfo['owner']}
-[住址] => {$imageInfo['address']}
-[使用性质] => {$imageInfo['use_character']}
-[品牌型号] => {$imageInfo['model']}
-[车辆识别代号] => {$imageInfo['vin']}
-[发动机号码] => {$imageInfo['engine_no']}
-[注册日期] => {$imageInfo['register_date']}
-[发证日期] => {$imageInfo['issue_date']}
-[签发机关] => {$imageInfo['issued_by']}";
+		$contentText = "[号牌号码]  :  {$imageInfo['plate_no']}
+[车辆类型]  :  {$imageInfo['vehicle_type']}
+[所有人]  :  {$imageInfo['owner']}
+[住址]  :  {$imageInfo['address']}
+[使用性质]  :  {$imageInfo['use_character']}
+[品牌型号]  :  {$imageInfo['model']}
+[车辆识别代号]  :  {$imageInfo['vin']}
+[发动机号码]  :  {$imageInfo['engine_no']}
+[注册日期]  :  {$imageInfo['register_date']}
+[发证日期]  :  {$imageInfo['issue_date']}
+[签发机关]  :  {$imageInfo['issued_by']}";
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
@@ -181,13 +182,12 @@ responseInfo;
 		$side = array('front'=>'正面','back'=>'反而')[$imageInfo['side']];
 
 		if ($side == '正面') {
-			$contentText = "[姓名] => {$imageInfo['name']} 
+			$contentText = "[姓名]  :  {$imageInfo['name']} 
 [性别]  :  {$imageInfo['gender']}
 [民族]  :  {$imageInfo['race']}
 [生日]  :  {$imageInfo['birthday']}
 [住址]  :  {$imageInfo['address']}
-[身份证号] => {$imageInfo['id_card_number']}
-";
+[身份证号]  :  {$imageInfo['id_card_number']}";
 		}else{
 			$contentText = "[签发机关]  :  {$imageInfo['issued_by']}
 [有效日期]  :  {$imageInfo['valid_date']} ";
@@ -220,36 +220,36 @@ responseInfo;
 // //----------------    test post   --------------------
 
 $fppi = new FacePlusPlusWX();
-// $url = "http://news.xinhuanet.com/photo/2013-07/25/11118125064696_1981d.jpg";
-// // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
-// 
+// //  $url = "http://news.xinhuanet.com/photo/2013-07/25/11118125064696_1981d.jpg";
+// // // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
 
-//人脸识别
-// $output =  $fppi->faceDetectWX($url); 
-// print_r($output);
 
-//场景对象
-// $output =  $fppi->detectSceneAndObjectWX($url); 
-// 
-//驾照识别
+// // 人脸识别
+// // $output =  $fppi->faceDetectWX($url); 
+// // print_r($output);
+
+// //场景对象
+// // $output =  $fppi->detectSceneAndObjectWX($url); 
+// // 
+// // 驾照识别
 // $url = "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9dcd100baa1cd11a167b767bb12c8fcc2ce2da0.jpg";
 // $output =  $fppi->ocrDriverLicenseWX($url); 
 
-// //机动车行驶证
-// $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
-// $output = $fppi->ocrVehicleLicenseWX($url);
+//机动车行驶证
+$url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
+$output = $fppi->ocrVehicleLicenseWX($url);
 
-//身份证识别
-$url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
-// $url = "http://img.ptfish.com/attachment/forum/201304/26/134127y2y6ilgxaxe746gq.jpg";
-$output = $fppi->ocrIdCardWX($url);
+// //身份证识别
+// // $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
+// // $url = "http://img.ptfish.com/attachment/forum/201304/26/134127y2y6ilgxaxe746gq.jpg";
+// // $output = $fppi->ocrIdCardWX($url);
 
 // print_r($output);
-// //发消息部分。可以公用
-// $url = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA/0";
-// $output['picurl'] = $url;
-// $output['url'] = $url;
+// 发消息部分。可以公用
+$url = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA/0";
+$output['picurl'] = $url;
+$output['url'] = $url;
 
-// $openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
-// $serverMsg = new ServerMsg();
-// $serverMsg->send($openId, $output,'news');
+$openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
+$serverMsg = new ServerMsg();
+$serverMsg->send($openId, $output,'news');
