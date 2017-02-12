@@ -384,10 +384,10 @@ class Wechat {
                 break;
         }
         
-        //输出空，免得微信报超时
-       // echo '';
-       // 
-        //include_once '../lib/ServerMsg.class.php';
+        //创建客服消息对象
+        $serverMsg = new ServerMsg();
+        $serverMsg->send($openId, '拼命识别中。。。{PHP_EOL}这是技术活，可能要点时间，请耐心等待。。。','text');
+
         //从微信公众号服务端下载资源
         $mediaId = "{$object->MediaId}";
         $image = Media::download($mediaId);
@@ -401,10 +401,10 @@ class Wechat {
         $fppi = new FacePlusPlusWX();
         $content =  $fppi->faceDetectWX($url); 
 
-        $content = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        //$content = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
         //准备发送客服消息
-        $serverMsg = new ServerMsg();
+
         if (is_array($content)) {
             $content['picurl']= "{$object->PicUrl}";
             $content['url']= "{$object->PicUrl}";
