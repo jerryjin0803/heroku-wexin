@@ -398,10 +398,10 @@ class Wechat {
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
 
-        // //准备发送客服消息
+        //准备发送客服消息
         $openId = $object->FromUserName;
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $result,'news');
+        $serverMsg->send($openId, $result,'text');
 
         return $result;
     }
