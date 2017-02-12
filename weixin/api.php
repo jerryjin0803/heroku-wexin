@@ -4,6 +4,7 @@ include_once '../lib/media.lib.php';
 include_once '../servers/FacePlusPlusWX.class.php';
 include_once '../lib/cURL.class.php';
 include_once '../lib/PlayersManage.class.php';
+include_once '../lib/ServerMsg.class.php';
 
 
 //设置下时区
@@ -324,8 +325,13 @@ class Wechat {
     //接收图片消息
     private function receiveImage($object)
     {
-        //判断是普通发图片，还是菜单开启的图像识别
-        switch ($object->EventKey)//创建菜单时的 "key": "rselfmenu_0_0", 
+
+        $openId = $object->FromUserName;
+        $playInfoKey = 'EventKey';
+        $playerLastOperate = PlayersManage::setPlayerInfo($openId, $playInfoKey);
+
+        //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
+        switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
         {
             //人脸识别        
             case "faceDetect":
@@ -384,6 +390,8 @@ class Wechat {
 
         //发完客服消息，直接退出。
         $result = $this->transmitText($object, $content);
+        //处理完了，标记下，以便下次继续
+        PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         return $result;
     }
 
