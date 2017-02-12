@@ -330,7 +330,7 @@ class Wechat {
 
         $openId = $object->FromUserName;
         $playInfoKey = 'EventKey';
-        $playerLastOperate = PlayersManage::setPlayerInfo($openId, $playInfoKey);
+        $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
 
         //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
         switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
