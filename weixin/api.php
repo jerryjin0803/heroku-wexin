@@ -401,7 +401,7 @@ class Wechat {
 
 
         //正常回复消息。
-        //$result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
+        $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
         
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
@@ -409,8 +409,8 @@ class Wechat {
         //准备发送客服消息
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, $result,'text');
-        exit;
-        //return $result;
+        //exit;
+        return $result;
     }
 
     //接收位置消息
