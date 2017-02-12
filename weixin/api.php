@@ -387,15 +387,15 @@ class Wechat {
         //输出空，免得微信报超时
        // echo '';
        // 
-        // include_once '../lib/ServerMsg.class.php';
-        // //从微信公众号服务端下载资源
-        // $mediaId = "{$object->MediaId}";
-        // $image = Media::download($mediaId);
-        // //保存到本地
-        // $fileManage = new FileManage();
-        // $fileManage->saveImage($image, $mediaId);
-        // //heroku 服务器上的 URL 
-        // $url = 'https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg';
+        include_once '../lib/ServerMsg.class.php';
+        //从微信公众号服务端下载资源
+        $mediaId = "{$object->MediaId}";
+        $image = Media::download($mediaId);
+        //保存到本地
+        $fileManage = new FileManage();
+        $fileManage->saveImage($image, $mediaId);
+        //heroku 服务器上的 URL 
+        $url = 'https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg';
         // //$path = '@./images/'.$mediaId.'.jpg';
         // //请求识别图像
         // $fppi = new FacePlusPlusWX();
@@ -418,7 +418,7 @@ class Wechat {
         // //$result =  $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId. PHP_EOL.$url;
         // 
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $content .PHP_EOL,'text');
+        $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
         // //正常回复消息。
         $result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
