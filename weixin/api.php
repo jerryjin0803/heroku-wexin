@@ -368,7 +368,7 @@ class Wechat {
             default:
                 // $content = array("MediaId"=>$object->MediaId);
                 // $result = $this->transmitImage($object, $content);
-                $content = "普通发图";
+                $content = "普通图片消息";
                 break;
         }
         
@@ -398,8 +398,8 @@ class Wechat {
 
         //发完客服消息，直接退出。
         $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
-        //处理完了，标记下，以便下次继续
-        //PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
+        //处理完了,清空状态。不然普通发图就会被误读了
+        PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         return $result;
     }
 
