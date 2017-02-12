@@ -252,7 +252,7 @@ class Wechat {
 
                 // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
 
-                $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE)
+                $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
     		default:
