@@ -180,7 +180,7 @@ responseInfo;
 
 		$side = array('front'=>'正面','back'=>'反而')[$imageInfo['side']];
 
-		if ($side == 'front') {
+		if ($side == '正面') {
 			$contentText = "[姓名] => {$imageInfo['name']} 
 [性别]  :  {$imageInfo['gender']}
 [民族]  :  {$imageInfo['race']}
@@ -219,7 +219,7 @@ responseInfo;
 }
 // //----------------    test post   --------------------
 
-// $fppi = new FacePlusPlusWX();
+$fppi = new FacePlusPlusWX();
 // $url = "http://news.xinhuanet.com/photo/2013-07/25/11118125064696_1981d.jpg";
 // // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
 // 
@@ -240,9 +240,9 @@ responseInfo;
 // $output = $fppi->ocrVehicleLicenseWX($url);
 
 //身份证识别
-// $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
+$url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
 // $url = "http://img.ptfish.com/attachment/forum/201304/26/134127y2y6ilgxaxe746gq.jpg";
-// $output = $fppi->ocrIdCardWX($url);
+$output = $fppi->ocrIdCardWX($url);
 
 // print_r($output);
 // //发消息部分。可以公用
