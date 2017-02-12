@@ -252,7 +252,11 @@ class Wechat {
 
                 // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
 
-                $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                // $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+                $content = "openId = {$object->FromUserName}
+playInfoKey = 'EventKey'
+playInfoValue = {$object->EventKey}";
+
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
     		default:
@@ -400,7 +404,7 @@ class Wechat {
         //发完客服消息，直接退出。
         $result = $this->transmitText($object, $content );//.' +++ '. $playerLastOperate);
         //处理完了，标记下，以便下次继续
-        PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
+        //PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         return $result;
     }
 
