@@ -389,7 +389,7 @@ class Wechat {
        // 
         include_once '../lib/ServerMsg.class.php';
         //从微信公众号服务端下载资源
-        $mediaId = {$object->MediaId};
+        $mediaId = $object->MediaId;
         $image = Media::download($mediaId);
         //保存到本地
         $fileManage = new FileManage();
