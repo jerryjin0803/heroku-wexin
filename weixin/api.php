@@ -333,8 +333,11 @@ class Wechat {
     //接收图片消息
     private function receiveImage($object)
     {
-        //回复空字符串，免得微信报超时
+        //动态输出空字符串，微信收到后就不会报超时了。
+        //之后的代码还可以继续。
         echo "";
+        ob_flush();
+        flush(); 
 
         $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
