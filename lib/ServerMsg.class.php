@@ -8,7 +8,7 @@ class ServerMsg{
     private $apiUrl = 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token='; 
 
     //按类型别分处理JSON格式数据，然后调用发送
-    public function send($openId, $msgData, $msgType){
+    public static function send($openId, $msgData, $msgType){
 
         $jsonMsg = '';
         //获取对应类型的回复消息(格式为数组,后面正式发之前会转成JSON)

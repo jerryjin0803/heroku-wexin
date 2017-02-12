@@ -400,8 +400,17 @@ class Wechat {
         //请求识别图像
         $fppi = new FacePlusPlusWX();
         $content =  $fppi->faceDetectWX($url); 
-        $content['picurl']= "{$object->PicUrl}";
-        $content['url']= "{$object->PicUrl}";
+
+        if (is_array($content)) {
+            $content['picurl']= "{$object->PicUrl}";
+            $content['url']= "{$object->PicUrl}";
+            //准备发送客服消息
+            $serverMsg = new ServerMsg();
+            // $serverMsg->send($openId, '客服消息：'.$result,'text');
+            $serverMsg->send($openId, $content,'news');
+        }else{
+            $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
+        }
 
         // $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
@@ -411,10 +420,6 @@ class Wechat {
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
 
-        //准备发送客服消息
-        $serverMsg = new ServerMsg();
-        // $serverMsg->send($openId, '客服消息：'.$result,'text');
-        $serverMsg->send($openId, $content,'news');
         //exit;
         return $result;
     }
