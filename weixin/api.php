@@ -403,24 +403,17 @@ class Wechat {
 
         $content = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
-        // if (is_array($content)) {
-        //     $content['picurl']= "{$object->PicUrl}";
-        //     $content['url']= "{$object->PicUrl}";
-        //     //准备发送客服消息
-        //     $serverMsg = new ServerMsg();
-        //     // $serverMsg->send($openId, '客服消息：'.$result,'text');
-        //     $serverMsg->send($openId, $content,'news');
-        // }else{
-        //     $serverMsg = new ServerMsg();
-        //     $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
-        // }
-        // $serverMsg = new ServerMsg();
-        // $serverMsg->send($openId, $content .PHP_EOL ,'text');
-        // // $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-        // //$result =  $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId. PHP_EOL.$url;
-        // 
+        //准备发送客服消息
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $content .PHP_EOL. $mediaId.PHP_EOL.$url,'text');
+        if (is_array($content)) {
+            $content['picurl']= "{$object->PicUrl}";
+            $content['url']= "{$object->PicUrl}";
+            // $serverMsg->send($openId, '客服消息：'.$result,'text');
+            $serverMsg->send($openId, $content,'news');
+        }else{
+            $serverMsg->send($openId, $content.PHP_EOL.$url,'text');
+        }
+
         // //正常回复消息。
         $result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
@@ -428,7 +421,7 @@ class Wechat {
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
 
         //exit;
-        return $result;
+        return '';//$result;
     }
 
     //接收位置消息
