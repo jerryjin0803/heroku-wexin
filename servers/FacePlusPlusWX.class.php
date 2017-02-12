@@ -89,7 +89,13 @@ responseInfo;
 		$imageInfo = $this->faceppApi->detectSceneAndObject($images);
 		$objects = $imageInfo['objects'][0]['value'];
 		$scenes = $imageInfo['scenes'][0]['value'];
-		$contentText = "这可能是 $objects ，在 $scenes。"; 
+
+		if (count($imageInfo['objects'])==0 ||  count($scenes['objects'])==0) {
+			$contentText = "抱歉[撇嘴]，这张图里没有我熟悉的东西！";
+		}else{
+			$contentText = "这可能是 {$objects} ，在 {$scenes}。"; 
+		}
+		
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
