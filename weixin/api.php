@@ -356,7 +356,7 @@ class Wechat {
         // }
         
         //输出空，免得微信报超时
-        echo '';
+       // echo '';
         include_once '../lib/ServerMsg.class.php';
         //从微信公众号服务端下载资源
         $mediaId = $object->MediaId;
@@ -378,8 +378,10 @@ class Wechat {
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, $content,'news');
         
+        $content = json_encode($content, JSON_UNESCAPED_UNICODE);
+
         //发完客服消息，直接退出。
-        // exit;
+        $result = $this->transmitText($object, $content);
         return $result;
     }
 
