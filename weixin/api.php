@@ -240,9 +240,9 @@ class Wechat {
                 // $playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
                 // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
                 
-                $openId = $object->FromUserName;
+                $openId = 'oCm6Zw0CCqvl4F6Qpuso0mLBouh0';//$object->FromUserName;
                 $playInfoKey = 'EventKey';
-                $playInfoValue = $object->EventKey;
+                $playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
                 PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
                 // //准备发送客服消息          
