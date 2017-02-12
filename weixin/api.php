@@ -235,14 +235,9 @@ class Wechat {
             case "pic_sysphoto":
             case "pic_photo_or_album":
               // //不管三七二十一，先把触发的事件存下来。后后续如图像识别的功能，可以按不同事件做相应类别的识别。最终用客服消息接口回复
-                // $openId = 'oCm6Zw0CCqvl4F6Qpuso0mLBouh0';//$object->FromUserName;
-                // $playInfoKey = 'EventKey';
-                // $playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
-                // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
-                
-                $openId = "{$object->FromUserName}";
+                $openId = "{$object->FromUserName}";//'oCm6Zw0CCqvl4F6Qpuso0mLBouh0'
                 $playInfoKey = 'EventKey';
-                $playInfoValue = "{$object->EventKey}";
+                $playInfoValue = "{$object->EventKey}";//'ocrVehicleLicense'
                 PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
                 // //准备发送客服消息          
@@ -253,9 +248,9 @@ class Wechat {
                 // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
 
                 // $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-                $content = "openId = {$object->FromUserName}
-playInfoKey = 'EventKey'
-playInfoValue = {$object->EventKey}";
+//                 $content = "openId = {$object->FromUserName}
+// playInfoKey = 'EventKey'
+// playInfoValue = {$object->EventKey}";
 
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
@@ -339,7 +334,7 @@ playInfoValue = {$object->EventKey}";
     private function receiveImage($object)
     {
 
-        $openId = $object->FromUserName;
+        $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
         
