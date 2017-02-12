@@ -7,7 +7,7 @@ class PlayersManage {
     public static function setPlayerInfo($openId ,$key , $value)
     {
         //读取出玩家信息状态文件内容，转成数组
-        $allPlayerInfo = @file_get_contents(PlayersManage::PLAYER_DATA);
+        $allPlayerInfo = file_get_contents(PlayersManage::PLAYER_DATA);
         $allPlayerInfoArray = json_decode($allPlayerInfo, true);
         //根据 openId 设置 key : value
         $allPlayerInfoArray[$openId][$key] = $value;
@@ -23,7 +23,7 @@ class PlayersManage {
     {
 
         //读取出玩家信息状态文件内容
-        $allPlayerInfo = @file_get_contents(PlayersManage::PLAYER_DATA);
+        $allPlayerInfo = file_get_contents(PlayersManage::PLAYER_DATA);
         //将出玩家信息转成数组
         $allPlayerInfoArray = json_decode($allPlayerInfo, true);
 

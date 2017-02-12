@@ -397,7 +397,7 @@ class Wechat {
         // $serverMsg->send($openId, $content,'news');
 
         //发完客服消息，直接退出。
-        $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey );//.' +++ '. $playerLastOperate);
+        $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
         //处理完了，标记下，以便下次继续
         //PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         return $result;
