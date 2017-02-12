@@ -69,7 +69,7 @@ class ServerMsg{
             'news' => Array(
                     'articles' => Array(
                             '0' => Array(
-                                    'title' => '客服代号笨笨：'.$data['title'],
+                                    'title' => $data['title'],
                                     'description' =>  $data['description'],
                                     'picurl' =>  $data['url'],
                                     'url' =>  $data['url']

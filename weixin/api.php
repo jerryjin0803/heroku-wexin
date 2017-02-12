@@ -358,8 +358,8 @@ class Wechat {
 
         //创建客服消息对象
         $serverMsg = new ServerMsg();
-        //开始前先发条消息，告诉用户骚等
-        $serverMsg->send($openId, $msgId.PHP_EOL. "拼命识别中[奋斗]...这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
+        //开始前先发条消息，告诉用户骚等  $msgId.PHP_EOL. 
+        $serverMsg->send($openId, "拼命识别中[奋斗]...这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
 
         //从微信公众号服务端下载资源
         $mediaId = "{$object->MediaId}";
