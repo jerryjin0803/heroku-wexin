@@ -54,7 +54,7 @@ class ServerMsg{
             "touser"=> $openId,
             "msgtype"=>"text",
             "text"=> array(
-                "content"=> '笨笨：'.PHP_EOL.$data
+                "content"=> '客服代号笨笨：'.PHP_EOL.$data
                 )
             );
  
@@ -69,7 +69,7 @@ class ServerMsg{
             'news' => Array(
                     'articles' => Array(
                             '0' => Array(
-                                    'title' => '笨笨：'.PHP_EOL.$data['title'],
+                                    'title' => '客服代号笨笨：'.PHP_EOL.$data['title'],
                                     'description' =>  $data['description'],
                                     'picurl' =>  $data['url'],
                                     'url' =>  $data['url']

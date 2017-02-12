@@ -389,9 +389,9 @@ class Wechat {
        // 
         //include_once '../lib/ServerMsg.class.php';
         //从微信公众号服务端下载资源
-        // $mediaId = "{$object->MediaId}";
-        // $image = Media::download($mediaId);
-        // //保存到本地
+        $mediaId = "{$object->MediaId}";
+        $image = Media::download($mediaId);
+        //保存到本地
         // $fileManage = new FileManage();
         // $fileManage->saveImage($image, $mediaId);
         // //heroku 服务器上的 URL 
@@ -418,7 +418,7 @@ class Wechat {
         // //$result =  $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId. PHP_EOL.$url;
         // 
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
+        $serverMsg->send($openId, $content .PHP_EOL. $mediaId.PHP_EOL.$url,'text');
         // //正常回复消息。
         $result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
