@@ -397,9 +397,11 @@ class Wechat {
         // //heroku 服务器上的 URL 
         $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
         // //$path = '@./images/'.$mediaId.'.jpg';
-        // //请求识别图像
-        // $fppi = new FacePlusPlusWX();
-        // $content =  $fppi->faceDetectWX($url); 
+        //请求识别图像
+        $fppi = new FacePlusPlusWX();
+        $content =  $fppi->faceDetectWX($url); 
+
+        $content = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
         // if (is_array($content)) {
         //     $content['picurl']= "{$object->PicUrl}";
