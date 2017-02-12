@@ -5,7 +5,6 @@ include_once '../servers/FacePlusPlusWX.class.php';
 include_once '../lib/cURL.class.php';
 include_once '../lib/PlayersManage.class.php';
 
-define("APP_ROOT",dirname(__FILE__));
 
 //设置下时区
 date_default_timezone_set('Asia/Shanghai');
@@ -203,10 +202,10 @@ class Wechat {
     		//--------------------------  菜单点击事件 --------------------------
     		case "CLICK":
                 // //不管三七二十一，先把触发的事件存下来。后后续如图像识别的功能，可以按不同事件做相应类别的识别。最终用客服消息接口回复
-                $openId = $object->FromUserName;
-                $playInfoKey = 'EventKey';
-                $playInfoValue = $object->EventKey;
-                PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue)
+                // $openId = $object->FromUserName;
+                // $playInfoKey = 'EventKey';
+                // $playInfoValue = $object->EventKey;
+                // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue)
 
                 //创建菜单时设定了每个按钮不同的 key 就是这里的 $object->EventKey 了
     			switch ($object->EventKey)
