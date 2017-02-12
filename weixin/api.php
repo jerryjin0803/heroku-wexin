@@ -357,7 +357,7 @@ class Wechat {
         
         //输出空，免得微信报超时
         echo '';
-        include_once '../weixin/api/ServerMsg.class.php';
+        include_once '../lib/ServerMsg.class.php';
         //从微信公众号服务端下载资源
         $mediaId = $object->MediaId;
         $image = Media::download($mediaId);
@@ -372,14 +372,14 @@ class Wechat {
         $content =  $fppi->faceDetectWX($url); 
         $content['picurl']= $object->PicUrl;
         $content['url']= $object->PicUrl;
-        
+
         //准备发送客服消息
         $openId = $object->FromUserName;
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, $content,'news');
         
         //发完客服消息，直接退出。
-        exit;
+        // exit;
         return $result;
     }
 
