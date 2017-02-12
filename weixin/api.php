@@ -387,21 +387,21 @@ class Wechat {
         //输出空，免得微信报超时
        // echo '';
        // 
-        // include_once '../lib/ServerMsg.class.php';
-        // //从微信公众号服务端下载资源
-        // $mediaId = $object->MediaId;
-        // $image = Media::download($mediaId);
-        // //保存到本地
-        // $fileManage = new FileManage();
-        // $fileManage->saveImage($image, $mediaId);
-        // //heroku 服务器上的 URL 
-        // $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
-        // $path = '@./images/'.$mediaId.'.jpg';
-        // //请求识别图像
-        // $fppi = new FacePlusPlusWX();
-        // $content =  $fppi->faceDetectWX($url); 
-        // $content['picurl']= $object->PicUrl;
-        // $content['url']= $object->PicUrl;
+        include_once '../lib/ServerMsg.class.php';
+        //从微信公众号服务端下载资源
+        $mediaId = $object->MediaId;
+        $image = Media::download($mediaId);
+        //保存到本地
+        $fileManage = new FileManage();
+        $fileManage->saveImage($image, $mediaId);
+        //heroku 服务器上的 URL 
+        $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
+        $path = '@./images/'.$mediaId.'.jpg';
+        //请求识别图像
+        $fppi = new FacePlusPlusWX();
+        $content =  $fppi->faceDetectWX($url); 
+        $content['picurl']= $object->PicUrl;
+        $content['url']= $object->PicUrl;
 
 
 
