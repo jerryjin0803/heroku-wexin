@@ -345,6 +345,16 @@ class Wechat {
         // $fppi = new FacePlusPlusWX();
         // $content =  $fppi->faceDetectWX($url); 
 
+        //一切开始这前，查看是否已经有此 MsgId 如果有直接返回空字符串。
+        //如果没有则写入 playInfo 文件中。
+        $msgId = {$object->MsgId}
+        if (!empty(PlayersManage::getPlayerInfo($openId, $playInfoKey))) {
+            echo "";
+            exit;
+         };
+        //写入
+        PlayersManage::setPlayerInfo($openId, $msgId, 'processing');
+
         //调取菜单点击的记录
         $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
@@ -386,7 +396,7 @@ class Wechat {
         
         //创建客服消息对象
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, "拼命识别中[奋斗]...{PHP_EOL}这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
+        $serverMsg->send($openId, $msgId.PHP_EOL. "拼命识别中[奋斗]...这可是高科技[坏笑]，慢工出细活，请耐心等待几秒...",'text');
 
         //从微信公众号服务端下载资源
         $mediaId = "{$object->MediaId}";
@@ -417,9 +427,10 @@ class Wechat {
         // //正常回复消息。
         $result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
-        // //处理完了,清空状态。不然普通发图就会被误读了
+        //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
-
+        //处理完了,清掉 msgId
+        PlayersManage::removePlayerInfo($openId, $msgId);
         //exit;
         return '';//$result;
     }
