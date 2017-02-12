@@ -335,7 +335,7 @@ class Wechat {
     {
         //动态输出空字符串，微信收到后就不会报超时了。
         //之后的代码还可以继续。
-        echo "";
+        echo str_pad('',4096);
         ob_flush();
         flush(); 
 
