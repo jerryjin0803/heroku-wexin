@@ -395,7 +395,7 @@ class Wechat {
         $fileManage = new FileManage();
         $fileManage->saveImage($image, $mediaId);
         //heroku 服务器上的 URL 
-        $url = 'https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg';
+        $url = "https://heroku-weixin.herokuapp.com/weixin/images/{$mediaId}.jpg";
         // //$path = '@./images/'.$mediaId.'.jpg';
         // //请求识别图像
         // $fppi = new FacePlusPlusWX();
