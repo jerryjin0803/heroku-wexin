@@ -347,8 +347,9 @@ class Wechat {
 
         //一切开始这前，查看是否已经有此 MsgId 如果有直接返回空字符串。
         //如果没有则写入 playInfo 文件中。
+        $openId = "{$object->FromUserName}";
         $msgId = "{$object->MsgId}";
-        if (!empty(PlayersManage::getPlayerInfo($openId, $playInfoKey))) {
+        if (!empty(PlayersManage::getPlayerInfo($openId, $msgId))) {
             echo "";
             exit;
          };
@@ -356,7 +357,6 @@ class Wechat {
         PlayersManage::setPlayerInfo($openId, $msgId, 'processing');
 
         //调取菜单点击的记录
-        $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
         //trtolower($playerLastOperate)
