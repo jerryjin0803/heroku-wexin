@@ -357,28 +357,29 @@ class Wechat {
         
         //输出空，免得微信报超时
        // echo '';
-        include_once '../lib/ServerMsg.class.php';
-        //从微信公众号服务端下载资源
-        $mediaId = $object->MediaId;
-        $image = Media::download($mediaId);
-        //保存到本地
-        $fileManage = new FileManage();
-        $fileManage->saveImage($image, $mediaId);
-        //heroku 服务器上的 URL 
-        $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
-        $path = '@./images/'.$mediaId.'.jpg';
-        //请求识别图像
-        $fppi = new FacePlusPlusWX();
-        $content =  $fppi->faceDetectWX($url); 
-        $content['picurl']= $object->PicUrl;
-        $content['url']= $object->PicUrl;
+       // 
+        // include_once '../lib/ServerMsg.class.php';
+        // //从微信公众号服务端下载资源
+        // $mediaId = $object->MediaId;
+        // $image = Media::download($mediaId);
+        // //保存到本地
+        // $fileManage = new FileManage();
+        // $fileManage->saveImage($image, $mediaId);
+        // //heroku 服务器上的 URL 
+        // $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
+        // $path = '@./images/'.$mediaId.'.jpg';
+        // //请求识别图像
+        // $fppi = new FacePlusPlusWX();
+        // $content =  $fppi->faceDetectWX($url); 
+        // $content['picurl']= $object->PicUrl;
+        // $content['url']= $object->PicUrl;
 
-        //准备发送客服消息
-        $openId = $object->FromUserName;
-        $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $content,'news');
+        // //准备发送客服消息
+        // $openId = $object->FromUserName;
+        // $serverMsg = new ServerMsg();
+        // $serverMsg->send($openId, $content,'news');
         
-        $content = json_encode($content, JSON_UNESCAPED_UNICODE);
+        $content = json_encode($object, JSON_UNESCAPED_UNICODE);
 
         //发完客服消息，直接退出。
         $result = $this->transmitText($object, $content);
