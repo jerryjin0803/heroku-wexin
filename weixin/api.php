@@ -335,8 +335,9 @@ class Wechat {
     {
         //动态输出空字符串，微信收到后就不会报超时了。
         //之后的代码还可以继续。
-        //echo str_pad('',4096);
-        print str_repeat(" ", 4096);
+        echo str_pad('',4096);
+        //
+        //print str_repeat("", 4096);
         echo '';
         ob_flush();
         flush(); 
@@ -408,8 +409,8 @@ class Wechat {
 
         //准备发送客服消息
         $serverMsg = new ServerMsg();
-        $serverMsg->send($openId, $result,'text');
-        //exit;
+        $serverMsg->send($openId, '客服消息：'.$result,'text');
+        exit;
         return $result;
     }
 
