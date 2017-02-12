@@ -337,13 +337,13 @@ class Wechat {
         //之后的代码还可以继续。
 
         //输出空字符串，让微信收到后就不会报超时。
-        print str_repeat("", 4096);
+        print str_repeat(" ", 4096);
         echo '';
         ob_flush();
         flush(); 
         // //图版分析功能。时间较长。
-        // $fppi = new FacePlusPlusWX();
-        // $content =  $fppi->faceDetectWX($url); 
+        $fppi = new FacePlusPlusWX();
+        $content =  $fppi->faceDetectWX($url); 
 
 
         $openId = "{$object->FromUserName}";
@@ -414,7 +414,7 @@ class Wechat {
         //准备发送客服消息
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, '客服消息：'.$result,'text');
-        exit;
+        //exit;
         return $result;
     }
 
