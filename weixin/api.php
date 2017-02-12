@@ -347,7 +347,7 @@ class Wechat {
 
         //一切开始这前，查看是否已经有此 MsgId 如果有直接返回空字符串。
         //如果没有则写入 playInfo 文件中。
-        $msgId = {$object->MsgId}
+        $msgId = "{$object->MsgId}";
         if (!empty(PlayersManage::getPlayerInfo($openId, $playInfoKey))) {
             echo "";
             exit;
