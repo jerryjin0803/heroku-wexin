@@ -415,9 +415,9 @@ class Wechat {
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, $content .PHP_EOL.$url,'text');
         // $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-
+$result =  $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId. PHP_EOL.$url;
         //正常回复消息。
-        $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId. PHP_EOL.$url);//.' +++ '. $playerLastOperate);
+        $result = $this->transmitText($object,$result);//.' +++ '. $playerLastOperate);
         
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
