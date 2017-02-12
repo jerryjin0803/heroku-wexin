@@ -242,9 +242,9 @@ class Wechat {
                 //准备发送客服消息          
                 $openId = $object->FromUserName;
                 $serverMsg = new ServerMsg();
-                $serverMsg->send($openId, PlayersManage::setPlayerInfo(),'text');
+                $serverMsg->send($openId, PlayersManage::getPlayerInfo(),'text');
 
-                $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::setPlayerInfo() ;
+                $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
 
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
