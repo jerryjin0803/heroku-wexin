@@ -81,7 +81,7 @@ class ServerMsg{
     }
 }
 
-//===================================
+//======================     test    =============
 
 
 // $openId = "oCm6Zw0CCqvl4F6Qpuso0mLBouh0";
@@ -108,3 +108,11 @@ class ServerMsg{
 // $output = $ch->post($url, $postData);   //发送 POST 请求,返回结果
 // // $output = (array) json_decode($output, true);        //把 JSON 编码的字符串转换为 PHP 
 // print_r($output) ;
+// 
+/*$postData = '{"touser":"oCm6Zw0CCqvl4F6Qpuso0mLBouh0","msgtype":"news","news":{"articles":[{"title":"客服代号笨笨：鉴定结果","description":"这可能是 Library，在 Person。","picurl":"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA\/0","url":"http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA\/0"}]}}';
+$url = $apiUrl . AccessToken::getAccessToken();
+echo  $url ;
+$ch = new cURL();   //实例化一个 cURL
+$output = $ch->post($url, $postData);   //发送 POST 请求,返回结果
+// $output = (array) json_decode($output, true);        //把 JSON 编码的字符串转换为 PHP 
+print_r($output) ;*/

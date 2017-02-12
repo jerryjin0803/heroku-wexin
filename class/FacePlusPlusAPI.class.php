@@ -224,7 +224,7 @@ class FacePlusPlusAPI {
 // $url = "http://cdn.duitang.com/uploads/blog/201403/12/20140312223147_P3Zei.thumb.600_0.jpeg";
 // print_r($fppa->recognizeText($url));
 
-//身份证识别
+// 身份证识别
 // $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
 // echo $fppa->ocrIdCard($url);
 // print_r($fppa->ocrIdCard($url)) ;
@@ -233,6 +233,6 @@ class FacePlusPlusAPI {
 // $url = "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9dcd100baa1cd11a167b767bb12c8fcc2ce2da0.jpg";
 // print_r($fppa->ocrDriverLicense($url));
 
-// //机动车行驶证
+//机动车行驶证
 // $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
 // print_r($fppa->ocrVehicleLicense($url));

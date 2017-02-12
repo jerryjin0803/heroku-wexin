@@ -377,6 +377,7 @@ class Wechat {
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
         //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
+        $content = '';
         switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
         {
             //人脸识别        
@@ -431,7 +432,7 @@ class Wechat {
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         //处理完了,清掉 msgId
         PlayersManage::removePlayerInfo($openId, $msgId);
-        //exit;
+        echo "";
         return '';//$result;
     }
 
