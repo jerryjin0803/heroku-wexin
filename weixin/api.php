@@ -126,7 +126,8 @@ class Wechat {
     	//临时定义一个变量， 不同的事件发生时， 给用户反馈不同的内容
     	$content = "";
 
-    	//================================== 对用户触发的不同事件做处理 ===================================
+    	//======================= 对用户触发的不同事件做处理 =========================
+        //trtolower($object->Event)
     	switch ($object->Event)
     	{
     		//-------------------------- 用户关注 触发的事件 --------------------------
@@ -238,6 +239,11 @@ class Wechat {
                 // $playInfoKey = 'EventKey';
                 // $playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
                 // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
+                
+                $openId = $object->FromUserName;
+                $playInfoKey = 'EventKey';
+                $playInfoValue = $object->EventKey;
+                PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
                 // //准备发送客服消息          
                 // $openId = $object->FromUserName;
@@ -245,10 +251,7 @@ class Wechat {
                 // $serverMsg->send($openId, PlayersManage::getPlayerInfo(),'text');
 
                 // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
-$openId = 'oCm6Zw0CCqvl4F6Qpuso0mLBouh0';//$object->FromUserName;
-$playInfoKey = 'EventKey';
-$playInfoValue = 'ocrVehicleLicense';//$object->EventKey;
-PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
+
 
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
@@ -335,9 +338,9 @@ PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
         $openId = $object->FromUserName;
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
-
+        
         //因为图片事件和菜单事件是分开的，所以要靠菜单来判断，这图片拿来作甚。
-        switch ($playerLastOperate)//创建菜单时的 "key": "rselfmenu_0_0", 
+        switch (trtolower($playerLastOperate))//创建菜单时的 "key": "rselfmenu_0_0", 
         {
             //人脸识别        
             case "faceDetect":
@@ -395,7 +398,7 @@ PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
         // $serverMsg->send($openId, $content,'news');
 
         //发完客服消息，直接退出。
-        $result = $this->transmitText($object, $content);
+        $result = $this->transmitText($object, $content .' +++ '. $playerLastOperate);
         //处理完了，标记下，以便下次继续
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
         return $result;
