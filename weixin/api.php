@@ -400,8 +400,8 @@ class Wechat {
         //请求识别图像
         $fppi = new FacePlusPlusWX();
         $content =  $fppi->faceDetectWX($url); 
-        $content['picurl']= $object->PicUrl;
-        $content['url']= $object->PicUrl;
+        $content['picurl']= "{$object->PicUrl}";
+        $content['url']= "{$object->PicUrl}";
 
         // $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
