@@ -399,7 +399,6 @@ class Wechat {
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
 
         //准备发送客服消息
-        $openId = $object->FromUserName;
         $serverMsg = new ServerMsg();
         $serverMsg->send($openId, $result,'text');
 
