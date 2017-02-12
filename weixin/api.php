@@ -342,8 +342,8 @@ class Wechat {
         ob_flush();
         flush(); 
         // //图版分析功能。时间较长。
-        $fppi = new FacePlusPlusWX();
-        $content =  $fppi->faceDetectWX($url); 
+        // $fppi = new FacePlusPlusWX();
+        // $content =  $fppi->faceDetectWX($url); 
 
 
         $openId = "{$object->FromUserName}";
