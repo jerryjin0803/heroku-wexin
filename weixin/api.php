@@ -391,15 +391,18 @@ class Wechat {
         // $content['picurl']= $object->PicUrl;
         // $content['url']= $object->PicUrl;
 
-        // //准备发送客服消息
-        // $openId = $object->FromUserName;
-        // $serverMsg = new ServerMsg();
-        // $serverMsg->send($openId, $content,'news');
 
-        //发完客服消息，直接退出。
+
+        //正常回复消息。
         $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
+
+        // //准备发送客服消息
+        $openId = $object->FromUserName;
+        $serverMsg = new ServerMsg();
+        $serverMsg->send($openId, $result,'news');
+
         return $result;
     }
 
