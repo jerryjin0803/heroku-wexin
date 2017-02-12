@@ -201,27 +201,10 @@ class Wechat {
                 break;
     		//--------------------------  菜单点击事件 --------------------------
     		case "CLICK":
-                // //不管三七二十一，先把触发的事件存下来。后后续如图像识别的功能，可以按不同事件做相应类别的识别。最终用客服消息接口回复
-                // $openId = $object->FromUserName;
-                // $playInfoKey = 'EventKey';
-                // $playInfoValue = $object->EventKey;
-                // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue)
 
                 //创建菜单时设定了每个按钮不同的 key 就是这里的 $object->EventKey 了
     			switch ($object->EventKey)
     			{
-    				// case "company":
-    	   //             $content = "姓名：金鑫";
-    				// 	break;
-    				// case "Information":
-    				// 	$content = "姓名：金鑫";
-    				// 	break;
-    				// case "Profile":
-    				// 	$content = "本人勇于挑战。";
-    				// 	break;
-    				// case "Experience":
-    				// 	$content = "游戏策划";
-    				// 	break;
     				case "Contact":
     					$content = "有事请来电:".PHP_EOL."18607437722";
     					break;
@@ -241,11 +224,26 @@ class Wechat {
     			$content = "跳转链接 ".$object->EventKey;
     			break;
 
-    		//--------------------------  跳转到 URL 事件 --------------------------
+    		//--------------------------  事件推送群发结果 --------------------------
     		case "MASSSENDJOBFINISH":
     			$content = "消息ID：".$object->MsgID."，结果：".$object->Status."，粉丝数：".$object->TotalCount."，过滤：".$object->FilterCount."，发送成功：".$object->SentCount."，发送失败：".$object->ErrorCount;
     			break;
+            //--------------------------  调用相机拍照 --------------------------
+            case "pic_sysphoto":
+            //--------------------------  调用 相机 或 相册--------------------------
+            case "pic_photo_or_album":
+              // //不管三七二十一，先把触发的事件存下来。后后续如图像识别的功能，可以按不同事件做相应类别的识别。最终用客服消息接口回复
+                $openId = $object->FromUserName;
+                $playInfoKey = 'EventKey';
+                $playInfoValue = $object->EventKey;
+                PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
 
+                //准备发送客服消息          
+                $openId = $object->FromUserName;
+                $serverMsg = new ServerMsg();
+                $serverMsg->send($openId, PlayersManage::setPlayerInfo(),'text');
+
+                break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
     		default:
     			$content = "receive a new event: ".$object->Event;
@@ -326,33 +324,39 @@ class Wechat {
     //接收图片消息
     private function receiveImage($object)
     {
-        // //判断是普通发图片，还是菜单开启的图像识别
-        // switch ($object->EventKey)//创建菜单时的 "key": "rselfmenu_0_0", 
-        // {
-        //     //人脸识别        
-        //     case "faceDetect":
-            
-        //         break;
-        //     //身份证识别
-        //     case "ocrIdCard":
+        //判断是普通发图片，还是菜单开启的图像识别
+        switch ($object->EventKey)//创建菜单时的 "key": "rselfmenu_0_0", 
+        {
+            //人脸识别        
+            case "faceDetect":
+                $content = "人脸识别";
 
-        //         break;
-        //     //驾驶证
-        //     case "ocrDriverLicense":
+                break;
+            //场景物体
+            case "detectSceneAndObject":
+                $content = "场景物体";
 
+                break;
+            //驾照识别
+            case "ocrDriverLicense":
+                $content = "驾照识别";
 
-        //         break;
-        //     //行驶证
-        //     case "ocrVehicleLicense":
-
-
-        //         break;
-        //     //图像识别
-        //     default:
-        //         $content = array("MediaId"=>$object->MediaId);
-        //         $result = $this->transmitImage($object, $content);
-        //         break;
-        // }
+                break;
+            //行驶证识别
+            case "ocrVehicleLicense":
+                $content = "行驶证识别";
+                break;
+            //二代身份证
+            case "ocrIdCard":
+                $content = "二代身份证";
+                break;
+            //普通发图
+            default:
+                // $content = array("MediaId"=>$object->MediaId);
+                // $result = $this->transmitImage($object, $content);
+                $content = "普通发图";
+                break;
+        }
         
         //输出空，免得微信报超时
        // echo '';
@@ -377,8 +381,6 @@ class Wechat {
         // $openId = $object->FromUserName;
         // $serverMsg = new ServerMsg();
         // $serverMsg->send($openId, $content,'news');
-        
-        $content = json_encode($object, JSON_UNESCAPED_UNICODE);
 
         //发完客服消息，直接退出。
         $result = $this->transmitText($object, $content);

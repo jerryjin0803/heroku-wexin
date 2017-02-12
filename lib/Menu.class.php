@@ -80,4 +80,7 @@ class Menu{
 }
 // //====================== test 下载多媒体========================
 
-echo Menu::create(Menu::MENU_JSON);
+//echo Menu::create(Menu::MENU_JSON);
+//
+print_r(json_decode(Menu::MENU_JSON, true));
+              

@@ -19,16 +19,27 @@ class PlayersManage {
         fclose($f);
     }
 
-    public static function getPlayerInfo($openId ,$key)
+    public static function getPlayerInfo($openId = '', $key = '')
     {
-        //读取出玩家信息状态文件内容，转成数组
+
+        //读取出玩家信息状态文件内容
         $allPlayerInfo = @file_get_contents(PlayersManage::PLAYER_DATA);
+        //将出玩家信息转成数组
         $allPlayerInfoArray = json_decode($allPlayerInfo, true);
+
+        //如果没传 openId 就返回所有玩家信息
+        if ($openId == '') {
+            return json_encode($allPlayerInfoArray ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
+        //如果没传 key 就返回所有玩家信息
+        if ($key == '') {
+            return json_encode($allPlayerInfoArray[$openId] ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        }
         //根据 openId : key 取 value
         return $allPlayerInfoArray[$openId][$key];
     }
 }
 //PlayersManage::setPlayerMenuOperate('openId5345345435','key2323', 'vvvvvvvvvvvvvvvvvvvvvvvvg');
-//echo PlayersManage::getPlayerMenuOperate('openId2','key21');
-
+// echo PlayersManage::getPlayerInfo('openId','key1');
+// print_r((json_decode(PlayersManage::getPlayerInfo(), true)));
 ?>
