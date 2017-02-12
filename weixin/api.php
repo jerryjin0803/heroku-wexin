@@ -337,15 +337,15 @@ class Wechat {
         //之后的代码还可以继续。
 
         //输出空字符串，让微信收到后就不会报超时。
-        print str_repeat(" ", 4096);
-        echo '';
-        ob_flush();
-        flush(); 
+        // print str_repeat(" ", 4096);
+        // echo '';
+        // ob_flush();
+        // flush(); 
         // //图版分析功能。时间较长。
         // $fppi = new FacePlusPlusWX();
         // $content =  $fppi->faceDetectWX($url); 
 
-
+        //调取菜单点击的记录
         $openId = "{$object->FromUserName}";
         $playInfoKey = 'EventKey';
         $playerLastOperate = PlayersManage::getPlayerInfo($openId, $playInfoKey);
@@ -389,24 +389,24 @@ class Wechat {
        // 
         include_once '../lib/ServerMsg.class.php';
         //从微信公众号服务端下载资源
-        $mediaId = $object->MediaId;
+        $mediaId = {$object->MediaId};
         $image = Media::download($mediaId);
         //保存到本地
         $fileManage = new FileManage();
         $fileManage->saveImage($image, $mediaId);
         //heroku 服务器上的 URL 
         $url = 'https://heroku-weixin.herokuapp.com/weixin/images/'.$mediaId.'.jpg';
-        $path = '@./images/'.$mediaId.'.jpg';
+        //$path = '@./images/'.$mediaId.'.jpg';
         //请求识别图像
         $fppi = new FacePlusPlusWX();
         $content =  $fppi->faceDetectWX($url); 
         $content['picurl']= $object->PicUrl;
         $content['url']= $object->PicUrl;
 
-
+        $result = json_encode($content ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
         //正常回复消息。
-        $result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate );//.' +++ '. $playerLastOperate);
+        //$result = $this->transmitText($object, $content .PHP_EOL. $openId .PHP_EOL. $playInfoKey.PHP_EOL. $playerLastOperate . PHP_EOL.$mediaId);//.' +++ '. $playerLastOperate);
         
         //处理完了,清空状态。不然普通发图就会被误读了
         PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
