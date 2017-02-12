@@ -10,7 +10,7 @@
 服务器上下载数据。
 ###########################################################################*/
 
-include '../class/BookAPI.class.php';
+include_once '../class/BookAPI.class.php';
 
 class BooksInfo {
 

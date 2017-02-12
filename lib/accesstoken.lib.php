@@ -1,9 +1,9 @@
 <?php
 
 
-include 'msg.lib.php';
-include 'msgconstant.lib.php';
-include 'cURL.class.php';
+include_once 'msg.lib.php';
+include_once 'msgconstant.lib.php';
+include_once 'cURL.class.php';
 
 /*
  * 开发者配置

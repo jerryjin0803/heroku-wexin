@@ -32,6 +32,14 @@ class FileManage {
         fwrite($fp2,$image);  
         fclose($fp2);  
     }
+
+    public function saveFile($filePathName = '', $fileData = '')
+    {
+        $f = fopen($filePathName, 'w+');//w+
+        fwrite($f, $fileData);
+        fclose($f);
+    }
+
 }
 
 ?>

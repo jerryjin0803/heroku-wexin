@@ -15,7 +15,7 @@
 */
 
 
-include '../lib/cURL.class.php';
+include_once '../lib/cURL.class.php';
 
 class ChineseWordSegmentationAPI {
 	private  $apiPost = "http://api.pullword.com/post.php";

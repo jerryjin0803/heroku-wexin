@@ -1,7 +1,7 @@
 <?php
 //namespace LaneWeChat\Core;
 //include '../lib/accesstoken.lib.php';
-include 'accesstoken.lib.php';
+include_once 'accesstoken.lib.php';
 //include 'msg.lib.php';
 
 /**
