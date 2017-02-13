@@ -13,6 +13,7 @@ include_once '../lib/ServerMsg.class.php';
 
 class FacePlusPlusWX {
 	private $faceppApi;
+	private $errorJerry = '[皱眉]相信我，这肯定是个意外[机智]。专业名词叫：“小(ji)概(shu)率(bu)事(guo)件(guan)”[捂脸]';
 
 	function __construct() {
 		//创建 facc++ 对象
@@ -28,14 +29,14 @@ class FacePlusPlusWX {
 		$imageInfo = $this->faceppApi->faceDetect($images);
 		//取出面部信息
 		$faceInfo = $imageInfo['faces'][0]['attributes'];
-
+		$imageInfo['faces']=array();
 
 		//如果出错，直接返回错误信息
 		if (isset($imageInfo['error_message'])){
-			return '我靠。。。操作失败：' . PHP_EOL . $imageInfo['error_message'];
+			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
 		}
 		if (!count($imageInfo['faces'])) {
-			return '你确定你拍的是张“脸” [抠鼻]？可能离太远或太近了，给个好点的角度嘛[撇嘴]';
+			return '如果这张图里真有人的话，那一定是你拍摄角度太刁钻了[抠鼻]？贫道能掐会算，看相识人从来没走过眼[撇嘴]，凭我闯荡江湖几十年的经验[悠闲]，看不出来我还能瞎编啊[抠鼻]但这次真的是你的图有问题[机智]';
 		}
 
 		// $attributes= Array(
@@ -87,19 +88,24 @@ responseInfo;
 	{
 		//上传图片识别返回结果
 		$imageInfo = $this->faceppApi->detectSceneAndObject($images);
-		$objects = $imageInfo['objects'][0]['value'];
-		$scenes = $imageInfo['scenes'][0]['value'];
-
-		if (count($imageInfo['objects'])==0 ||  count($scenes['objects'])==0) {
-			$contentText = "抱歉[撇嘴]，这张图里没有我熟悉的东西！";
-		}else{
-			$contentText = "这可能是 {$objects} ，在 {$scenes}。"; 
+		// $objects = $imageInfo['objects'][0]['value'];
+		// $scenes = $imageInfo['scenes'][0]['value'];
+		//print_r($imageInfo);
+		//如果出错，直接返回错误信息
+		if (isset($imageInfo['error_message'])){
+			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
+		}
+		echo count($imageInfo['scenes']);
+		// if (count($imageInfo['scenes'])==0 ||  count($imageInfo['objects'])==0) {
+		if (!$imageInfo['scenes'] && !$imageInfo['objects']) {
+			return "[撇嘴]I'm so sorry，这张图里没有我熟悉的东西！";
 		}
 		
+		$contentText = "我猜图里应该有： " . $this->getValue($imageInfo)." 就这些了，地球的东西我本来就不太熟！";
 
 		//创建回复用的信息（主程序中回复函数的参数）
 		$content = array(
-			"title" => "鉴定结果", 
+			"title" => "呦呵！有所发现！", 
 			"description" => $contentText, 
 			"picurl" => $images, 
 			"url" => $images
@@ -115,6 +121,15 @@ responseInfo;
 		//上传图片识别返回结果
 		$imageInfo = $this->faceppApi->ocrDriverLicense($images);
 		$imageInfo = $imageInfo['cards'][0];
+
+		//如果出错，直接返回错误信息
+		if (isset($imageInfo['error_message'])){
+			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
+		}
+		//如果发现所查图片不是本证件就报错
+		if ($imageInfo['type'] != 1){
+			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【驾照】呢[囧]？";
+		}
 
 		// print_r($imageInfo);
 		// return '测试直接跳出';
@@ -152,6 +167,15 @@ responseInfo;
 		$imageInfo = $this->faceppApi->ocrVehicleLicense($images);
 		$imageInfo = $imageInfo['cards'][0];
 
+		//如果出错，直接返回错误信息
+		if (isset($imageInfo['error_message'])){
+			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
+		}
+		//如果发现所查图片不是本证件就报错
+		if ($imageInfo['type'] != 1){
+			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【行驶证】呢[囧]？";
+		}
+
 		// print_r($imageInfo);
 		// return '测试直接跳出';
 		$contentText = "[号牌号码]  :  {$imageInfo['plate_no']}
@@ -185,7 +209,16 @@ responseInfo;
 		$imageInfo = $this->faceppApi->ocrIdCard($images);
 		$imageInfo = $imageInfo['cards'][0];
 
-		$side = array('front'=>'正面','back'=>'反而')[$imageInfo['side']];
+		//如果出错，直接返回错误信息
+		if (isset($imageInfo['error_message'])){
+			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
+		}
+		//如果发现所查图片不是本证件就报错
+		if ($imageInfo['type'] != 1){
+			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【良民证】呢[囧]？";
+		}
+
+		$side = array('front'=>'正面','back'=>'反面')[$imageInfo['side']];
 
 		if ($side == '正面') {
 			$contentText = "[姓名]  :  {$imageInfo['name']} 
@@ -222,36 +255,54 @@ responseInfo;
 		return $content;
 	}
 
+	//从数组中找到特定 key 的集合。场景物品识别函数用
+	private function getValue($arr)
+	{
+		$value_list;
+		$len = count($arr['scenes']);
+		if ($len) {
+			for ($i=0; $i < $len; $i++) { 
+				$value_list .= $arr['scenes'][$i]['value'] . '、';
+			}
+		}
+		$len = count($arr['objects']);
+		if ($len) {
+			for ($i=0; $i < $len; $i++) { 
+				$value_list .= $arr['objects'][$i]['value'] . '、';
+			}
+		}
+		$value_list = trim($value_list,'、');
+		return $value_list;
+	}
 }
 // //----------------    test post   --------------------
 
 // $fppi = new FacePlusPlusWX();
-// //  $url = "http://news.xinhuanet.com/photo/2013-07/25/11118125064696_1981d.jpg";
+// $url = "http://upload.site.cnhubei.com/2014/1006/1412582103239.jpg";
+// $url = "http://img.my.csdn.net/uploads/201301/29/1359457558_7612.png";
 // // // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
 
+// //人脸识别
+// $output =  $fppi->faceDetectWX($url); 
 
-// // 人脸识别
-// // $output =  $fppi->faceDetectWX($url); 
-// // print_r($output);
+//场景对象
+// $output =  $fppi->detectSceneAndObjectWX($url); 
 
-// //场景对象
-// // $output =  $fppi->detectSceneAndObjectWX($url); 
-// // 
-// // 驾照识别
-// $url = "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9dcd100baa1cd11a167b767bb12c8fcc2ce2da0.jpg";
+// 驾照识别
+// $url = "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9dcd100baa1cd11a167b767bb12c8fcc2ce2da0x.jpg";
 // $output =  $fppi->ocrDriverLicenseWX($url); 
 
 //机动车行驶证
 // $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
 // $output = $fppi->ocrVehicleLicenseWX($url);
 
-// //身份证识别
-// // $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
-// // $url = "http://img.ptfish.com/attachment/forum/201304/26/134127y2y6ilgxaxe746gq.jpg";
-// // $output = $fppi->ocrIdCardWX($url);
+//身份证识别
+// $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
+// $url = "http://img.ptfish.com/attachment/forum/201304/26/134127y2y6ilgxaxe746gqx.jpg";
+// $output = $fppi->ocrIdCardWX($url);
 
 // print_r($output);
-// // 发消息部分。可以公用
+// // ---------------------------发消息部分。可以公用
 // $url = "http://mmbiz.qpic.cn/mmbiz_jpg/6MdIErTYeGibqzsmDiaS3Od1CjVMGuX9yYOXiaEzGWKJcK3s88dtcW2kxGR4lYv8TvpEjdBI44n1Nw4vD5VHDAWicA/0";
 // $output['picurl'] = $url;
 // $output['url'] = $url;
