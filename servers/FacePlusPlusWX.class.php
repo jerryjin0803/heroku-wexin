@@ -29,14 +29,14 @@ class FacePlusPlusWX {
 		$imageInfo = $this->faceppApi->faceDetect($images);
 		//取出面部信息
 		$faceInfo = $imageInfo['faces'][0]['attributes'];
-		$imageInfo['faces']=array();
 
 		//如果出错，直接返回错误信息
 		if (isset($imageInfo['error_message'])){
 			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
 		}
+		//识别不出人。的话 faces里是空的
 		if (!count($imageInfo['faces'])) {
-			return '如果这张图里真有人的话，那一定是你拍摄角度太刁钻了[抠鼻]？贫道能掐会算，看相识人从来没走过眼[撇嘴]，凭我闯荡江湖几十年的经验[悠闲]，看不出来我还能瞎编啊[抠鼻]但这次真的是你的图有问题[机智]';
+			return '[抠鼻]如果这张图里真有人的话，[撇嘴]那一定是你拍摄角度太刁钻了！[傲慢]贫道我能掐会算，看相识人从来没走过眼。[悠闲]凭我几十年闯荡江湖的经验，[抠鼻]看不出来，我编也能编出来。[机智]但这次真的是你的图有问题';
 		}
 
 		// $attributes= Array(
@@ -95,7 +95,7 @@ responseInfo;
 		if (isset($imageInfo['error_message'])){
 			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
 		}
-		echo count($imageInfo['scenes']);
+		// echo count($imageInfo['scenes']);
 		// if (count($imageInfo['scenes'])==0 ||  count($imageInfo['objects'])==0) {
 		if (!$imageInfo['scenes'] && !$imageInfo['objects']) {
 			return "[撇嘴]I'm so sorry，这张图里没有我熟悉的东西！";
@@ -126,9 +126,10 @@ responseInfo;
 		if (isset($imageInfo['error_message'])){
 			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
 		}
+
 		//如果发现所查图片不是本证件就报错
-		if ($imageInfo['type'] != 1){
-			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【驾照】呢[囧]？";
+		if ($imageInfo['type'] != 2){
+			return "[疑问]这是什么鬼？[机智]请您配合我们的工作，[捂脸]说好的【驾照】呢？";
 		}
 
 		// print_r($imageInfo);
@@ -172,8 +173,8 @@ responseInfo;
 			return $this->errorJerry . PHP_EOL . $imageInfo['error_message'];
 		}
 		//如果发现所查图片不是本证件就报错
-		if ($imageInfo['type'] != 1){
-			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【行驶证】呢[囧]？";
+		if ($imageInfo['type'] != 3){
+			return "你给我看的是啥[擦汗]？说好的【行驶证】呢[囧]？";
 		}
 
 		// print_r($imageInfo);
@@ -215,7 +216,7 @@ responseInfo;
 		}
 		//如果发现所查图片不是本证件就报错
 		if ($imageInfo['type'] != 1){
-			return "什么情况[疑问]你给我看的是啥[擦汗]？说好的【良民证】呢[囧]？";
+			return "[发怒]你地什么地干活？【良民证】地木有，你地死啦死啦地[菜刀]";
 		}
 
 		$side = array('front'=>'正面','back'=>'反面')[$imageInfo['side']];
@@ -278,18 +279,20 @@ responseInfo;
 // //----------------    test post   --------------------
 
 // $fppi = new FacePlusPlusWX();
-// $url = "http://upload.site.cnhubei.com/2014/1006/1412582103239.jpg";
+// $url = "http://scimg.jb51.net/allimg/160720/103-160H0115111B6.jpg";
+// $url = "http://www.yesky.com/uploadImages/2015/226/23/7S51EV1K3K73.jpg";
 // $url = "http://img.my.csdn.net/uploads/201301/29/1359457558_7612.png";
-// // // $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
+// $url = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1486721316459&di=cb5a7de80a8d7c0a73a8fdd28680ac59&imgtype=0&src=http%3A%2F%2Fimg.taopic.com%2Fuploads%2Fallimg%2F140316%2F318743-1403160PU577.jpg";
 
-// //人脸识别
+//人脸识别
 // $output =  $fppi->faceDetectWX($url); 
 
 //场景对象
 // $output =  $fppi->detectSceneAndObjectWX($url); 
 
 // 驾照识别
-// $url = "https://ss0.baidu.com/-Po3dSag_xI4khGko9WTAnF6hhy/zhidao/pic/item/f9dcd100baa1cd11a167b767bb12c8fcc2ce2da0x.jpg";
+// $url = "http://img.job5156.com/content/per_attachment/2014-6/d761ff81afea389343a71504ecd8790c.jpg";
+// $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
 // $output =  $fppi->ocrDriverLicenseWX($url); 
 
 //机动车行驶证
