@@ -311,7 +311,9 @@ class Wechat {
         }else{//如果都没有就。。。
             
             //$content = date("Y-m-d H:i:s",time())."\n你说啥，笨笨听不懂！哈哈哈哈";
-            $content = "你说啥，笨笨听不懂！哈哈哈哈";
+            //$content = "你说啥，笨笨听不懂！哈哈哈哈";
+            include_once "../class/TuLingAPI.class.php";
+            $content = TuLingAPI::talk($keyword)['text'];
         }
 
 
@@ -466,12 +468,13 @@ class Wechat {
     	*/
     
         $keyword = trim($object->Recognition);
-
+        include_once "../class/TuLingAPI.class.php";
+        $content = TuLingAPI::talk($keyword)['text'];
 
 
     	//如果开启语言识别功能， 就可以使用这个
         if (isset($object->Recognition) && !empty($object->Recognition)){
-            $content = "你说的是：“".$object->Recognition."” 是吗？我听不清呢，你大点声[睡]";
+            //$content = "你说的是：“".$object->Recognition."” 是吗？我听不清呢，你大点声[睡]";
             $result = $this->transmitText($object, $content);
         }else{
             $content = array("MediaId"=>$object->MediaId);
