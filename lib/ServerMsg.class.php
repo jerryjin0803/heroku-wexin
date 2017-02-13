@@ -54,7 +54,8 @@ class ServerMsg{
             "touser"=> $openId,
             "msgtype"=>"text",
             "text"=> array(
-                "content"=> '客服代号笨笨：'.PHP_EOL.$data
+                // "content"=> '客服代号笨笨：'.PHP_EOL.$data
+                "content"=> $data
                 )
             );
  

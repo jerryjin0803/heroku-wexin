@@ -65,7 +65,7 @@ class FacePlusPlusWX {
 		//拼接结果文本内容
 		$responseInfo = <<<responseInfo
 %s是个%s岁左右，%s的【%s】，%s。
-图片清晰度可以打: %s分。
+图片清晰度可以打：%s分
 摄影师帕金森指数：%s
 responseInfo;
 //头%s，%s眼镜，图像%s，应该%
@@ -132,8 +132,13 @@ responseInfo;
 			return "[疑问]这是什么鬼？[机智]请您配合我们的工作，[捂脸]说好的【驾照】呢？";
 		}
 
-		// print_r($imageInfo);
-		// return '测试直接跳出';
+		//数据不全的直接报错
+		foreach ($imageInfo as $key => $value) {
+			if (!$value) {
+				return "[抠鼻]你这图是用黄瓜拍的么？这不是【驾照】吧[捂脸]";
+			}
+		}
+
 		$version = array('1'=>'2013版本驾驶证','2'=>'2008或更早版本驾驶证')[$imageInfo['version']];
 		$contentText = "[驾驶证号]  :  {$imageInfo['license_number']}
 [姓名]  :  {$imageInfo['name']}
@@ -176,7 +181,12 @@ responseInfo;
 		if ($imageInfo['type'] != 3){
 			return "你给我看的是啥[擦汗]？说好的【行驶证】呢[囧]？";
 		}
-
+		//数据不全的直接报错
+		foreach ($imageInfo as $key => $value) {
+			if (!$value) {
+				return "[抠鼻]你这图是用黄瓜拍的么？这不是【行驶证】吧[捂脸]";
+			}
+		}
 		// print_r($imageInfo);
 		// return '测试直接跳出';
 		$contentText = "[号牌号码]  :  {$imageInfo['plate_no']}
@@ -218,7 +228,12 @@ responseInfo;
 		if ($imageInfo['type'] != 1){
 			return "[发怒]你地什么地干活？【良民证】地木有，你地死啦死啦地[菜刀]";
 		}
-
+		//数据不全的直接报错
+		foreach ($imageInfo as $key => $value) {
+			if (!$value) {
+				return "[抠鼻]你这图是用黄瓜拍的么？这不是【良民证】吧[捂脸]";
+			}
+		}
 		$side = array('front'=>'正面','back'=>'反面')[$imageInfo['side']];
 
 		if ($side == '正面') {
@@ -289,14 +304,14 @@ responseInfo;
 
 //场景对象
 // $output =  $fppi->detectSceneAndObjectWX($url); 
-
+// $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
 // 驾照识别
+// $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
 // $url = "http://img.job5156.com/content/per_attachment/2014-6/d761ff81afea389343a71504ecd8790c.jpg";
-// $url = "http://www.qq-ex.com/user/uploads/125377/addressphoto/11010419871229301X2.jpg";
 // $output =  $fppi->ocrDriverLicenseWX($url); 
 
 //机动车行驶证
-// $url = "http://imgsrc.baidu.com/zhangbai/pic/item/b8389b504fc2d56214291076e71190ef76c66c0c.jpg";
+// 
 // $output = $fppi->ocrVehicleLicenseWX($url);
 
 //身份证识别

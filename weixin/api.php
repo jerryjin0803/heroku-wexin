@@ -427,7 +427,8 @@ class Wechat {
             // $serverMsg->send($openId, '客服消息：'.$result,'text');
             $serverMsg->send($openId, $content,'news');
         }else{
-            $serverMsg->send($openId, $content.PHP_EOL."{$object->PicUrl}",'text');
+            // $serverMsg->send($openId, $content.PHP_EOL."{$object->PicUrl}",'text');
+            $serverMsg->send($openId, $content.PHP_EOL,'text');
         }
 
         //正常回复消息。
@@ -454,7 +455,6 @@ class Wechat {
     {
 
     	/*
-    	
     		//如果开启语言识别功能， 就可以使用这个
         if (isset($object->Recognition) && !empty($object->Recognition)){
             $content = "你刚才说的是：".$object->Recognition;
@@ -463,9 +463,11 @@ class Wechat {
     		$content = "未开启语音识别功能或者识别内容为空";
     		 $result = $this->transmitText($object, $content);
     	}
-    	
-    	
     	*/
+    
+        $keyword = trim($object->Recognition);
+
+
 
     	//如果开启语言识别功能， 就可以使用这个
         if (isset($object->Recognition) && !empty($object->Recognition)){
