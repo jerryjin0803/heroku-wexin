@@ -238,19 +238,11 @@ class Wechat {
                 $openId = "{$object->FromUserName}";//'oCm6Zw0CCqvl4F6Qpuso0mLBouh0'
                 $playInfoKey = 'EventKey';
                 $playInfoValue = "{$object->EventKey}";//'ocrVehicleLicense'
-                PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
-
-                // //准备发送客服消息          
-                // $openId = $object->FromUserName;
-                // $serverMsg = new ServerMsg();
-                // $serverMsg->send($openId, PlayersManage::getPlayerInfo(),'text');
-
-                // $content = "$openId _______  $playInfoKey _______  $playInfoValue ====== ".PlayersManage::getPlayerInfo() ;
-
-                // $content = json_encode($object ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
-//                 $content = "openId = {$object->FromUserName}
-// playInfoKey = 'EventKey'
-// playInfoValue = {$object->EventKey}";
+                // PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue);
+                //文件读写失败，直接返回提示
+                if (PlayersManage::setPlayerInfo($openId, $playInfoKey, $playInfoValue)) {
+                    //暂时啥也不做。试试效果
+                }
 
                 break;
     		//--------------------------  如果不属于以上任何事件那么 --------------------------
@@ -417,6 +409,8 @@ class Wechat {
                 // $content = array("MediaId"=>$object->MediaId);
                 // $result = $this->transmitImage($object, $content);
                 $content = "诶呦！这张不错哦[机智]";
+                // echo "";
+                // exit;
                 break;
         }
         
@@ -436,10 +430,10 @@ class Wechat {
         //正常回复消息。
         //$result = $this->transmitText($object, $content);//.' +++ '. $playerLastOperate);
         
-        //处理完了,清空状态。不然普通发图就会被误读了
-        PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
-        //处理完了,清掉 msgId
-        PlayersManage::removePlayerInfo($openId, $msgId);
+        // //处理完了,清空状态。不然普通发图就会被误读了
+        // PlayersManage::setPlayerInfo($openId, $playInfoKey, 'null');
+        // //处理完了,清掉 msgId
+        // PlayersManage::removePlayerInfo($openId, $msgId);
         echo "";
         return '';//$result;
     }

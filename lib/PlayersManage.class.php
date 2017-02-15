@@ -6,11 +6,15 @@ class PlayersManage {
 
     public static function setPlayerInfo($openId ,$key , $value)
     {
+        if (!file_exists(PlayersManage::PLAYER_DATA)) {
+            file_put_contents(PlayersManage::PLAYER_DATA, '');
+        }
         //读取出玩家信息状态文件内容，转成数组
         $allPlayerInfo = file_get_contents(PlayersManage::PLAYER_DATA);
+
         $allPlayerInfoArray = json_decode($allPlayerInfo, true);
         //根据 openId 设置 key : value
-        $allPlayerInfoArray[$openId][$key] = $value;
+        $allPlayerInfoArray[$openId][$key][] = $value;
         //再把 数组转回 JSON 
         $fileData = json_encode($allPlayerInfoArray, JSON_UNESCAPED_UNICODE);
         //把 JSON 保存回文件中
@@ -23,8 +27,12 @@ class PlayersManage {
     public static function getPlayerInfo($openId = '', $key = '')
     {
 
+        if (!file_exists(PlayersManage::PLAYER_DATA)) {
+            file_put_contents(PlayersManage::PLAYER_DATA, '');
+        }
         //读取出玩家信息状态文件内容
         $allPlayerInfo = file_get_contents(PlayersManage::PLAYER_DATA);
+
         //将出玩家信息转成数组
         $allPlayerInfoArray = json_decode($allPlayerInfo, true);
 
@@ -36,8 +44,13 @@ class PlayersManage {
         if ($key == '') {
             return json_encode($allPlayerInfoArray[$openId] ,JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
         }
-        //根据 openId : key 取 value
-        return $allPlayerInfoArray[$openId][$key];
+        //根据 openId : key 取 value。 将数组最后一个单元弹出（出栈）,如果没有返回空
+        if(!empty($value = @array_pop($allPlayerInfoArray[$openId][$key])))
+        {
+            return $value;
+        }
+        return false;
+        // return array_pop($allPlayerInfoArray[$openId][$key]);
     }
 
     public static function removePlayerInfo($openId = '', $key = '')
