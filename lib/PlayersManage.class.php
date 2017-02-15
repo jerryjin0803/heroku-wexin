@@ -14,9 +14,10 @@ class PlayersManage {
         //再把 数组转回 JSON 
         $fileData = json_encode($allPlayerInfoArray, JSON_UNESCAPED_UNICODE);
         //把 JSON 保存回文件中
-        $f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
-        fwrite($f, $fileData);
-        fclose($f);
+        //$f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
+        // fwrite($f, $fileData);
+        // fclose($f);
+        return self::fileWrite(PlayersManage::PLAYER_DATA, $fileData);
     }
 
     public static function getPlayerInfo($openId = '', $key = '')
@@ -50,11 +51,50 @@ class PlayersManage {
         //再把 数组转回 JSON 
         $fileData = json_encode($allPlayerInfoArray, JSON_UNESCAPED_UNICODE);
         //把 JSON 保存回文件中
-        $f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
-        fwrite($f, $fileData);
-        fclose($f);
+        // $f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
+        // fwrite($f, $fileData);
+        // fclose($f);
+        return self::fileWrite(PlayersManage::PLAYER_DATA, $fileData);
+    }
+
+    private static function fileWrite($fileName, $fileData)
+    {
+        if ($f = fopen ($fileName, 'w' )) {
+           $startTime = microtime ();
+           do {
+              $canWrite = flock ( $f, LOCK_EX );
+              if (! $canWrite)
+              usleep ( round ( rand ( 0, 100 ) * 1000 ) );
+           } while ( (! $canWrite) && ((microtime () - $startTime) < 1000) );
+           if ($canWrite) {
+              fwrite ( $f, $fileData );
+           }
+           fclose ( $f );
+        }
+
+        return false;
     }
     
+    private static function fileRead($fileName)
+    {
+        if ($f = fopen ($fileName, 'r' )) {
+           $startTime = microtime ();
+           do {
+              $canRead = flock ( $f, LOCK_EX );
+              if (! $canRead)
+              usleep ( round ( rand ( 0, 100 ) * 1000 ) );
+           } while ( (! $canRead) && ((microtime () - $startTime) < 1000) );
+           if ($canRead) {
+                while (!feof($f)) {
+                    $buffer = fgets($f)
+                }
+                return $buffer;
+           }
+           fclose ( $f );
+        }
+
+        return false;
+    }
 }
 // PlayersManage::setPlayerInfo('openIsdfsesd5','key', 'fssssssssssssssssssssss');
 // //echo PlayersManage::getPlayerInfo();
