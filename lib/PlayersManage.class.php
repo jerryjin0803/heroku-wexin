@@ -14,7 +14,7 @@ class PlayersManage {
         //再把 数组转回 JSON 
         $fileData = json_encode($allPlayerInfoArray, JSON_UNESCAPED_UNICODE);
         //把 JSON 保存回文件中
-        //$f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
+        // $f = fopen(PlayersManage::PLAYER_DATA, 'w');//w+
         // fwrite($f, $fileData);
         // fclose($f);
         return self::fileWrite(PlayersManage::PLAYER_DATA, $fileData);
@@ -86,7 +86,7 @@ class PlayersManage {
            } while ( (! $canRead) && ((microtime () - $startTime) < 1000) );
            if ($canRead) {
                 while (!feof($f)) {
-                    $buffer = fgets($f)
+                    $buffer = fgets($f);
                 }
                 return $buffer;
            }
