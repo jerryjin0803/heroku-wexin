@@ -133,24 +133,30 @@ class Wechat {
     		//-------------------------- 用户关注 触发的事件 --------------------------
     		case "subscribe":
 
-                $content = array();
-                $content[] = array("Title"=>"欢迎光临！",  "Description"=>"大家好，我是笨笨，笨笨的笨，笨笨的笨，谢谢！", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrclvJeVtMkSEYCY5jVEpnytZaGzmZkqTiaWa841SNnIYR18WdCEXf0kOw/0");
-    			//通过事件中的xml转成的object对象中的FromUserName获取openid
-    			$openid = $object->FromUserName;
-    			//如果是扫描带参数的二维码
-    			if(!empty($object->EventKey)) {
-    				//将前缀去了， 只留下参数， 这个参数就是二维码中咱们指定的组ID
-    				$groupid = str_replace("qrscene_","",$object->EventKey);
-    				//调用func.inc.php中的adduser函数， 将用户加入到指定的组， 并加到指定的数据库
-    				adduser( $openid, $groupid);
+                // $content = array();
+                // $content[] = array("Title"=>"欢迎光临！",  "Description"=>"大家好，我是笨笨，笨笨的笨，笨笨的笨，谢谢！", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrclvJeVtMkSEYCY5jVEpnytZaGzmZkqTiaWa841SNnIYR18WdCEXf0kOw/0");
+                $content = "欢迎光临[愉快]这个测试号是我的DEMO[嘿哈]，服务器在国外可能有点慢[捂脸]。
+[机智]主要演示功能有：
+1、扫码查询图书信息。(扫ISBN图书码，接的豆瓣API)
+2、扫码查询商品信息。(微信默认的扫码功能)
+3、图像识别功能。都在【图像识别】菜单下，试试就知道了。(接的 Face++)
+4、聊天功能接的是图灵机器人。(暂时只实现了基本的文字聊天[皱眉]，高级回复内容要花些时间排版，以后会陆续更新上来。)";
+    			// //通过事件中的xml转成的object对象中的FromUserName获取openid
+    			// $openid = $object->FromUserName;
+    			// //如果是扫描带参数的二维码
+    			// if(!empty($object->EventKey)) {
+    			// 	//将前缀去了， 只留下参数， 这个参数就是二维码中咱们指定的组ID
+    			// 	$groupid = str_replace("qrscene_","",$object->EventKey);
+    			// 	//调用func.inc.php中的adduser函数， 将用户加入到指定的组， 并加到指定的数据库
+    			// 	adduser( $openid, $groupid);
 
-    				//如果用户传来EventKey事件， 则是扫描二维码的
-    				$content .= "\n来自二维码场景 ".$groupid;
+    			// 	//如果用户传来EventKey事件， 则是扫描二维码的
+    			// 	$content .= "\n来自二维码场景 ".$groupid;
 
-    			}else{
-    				//如果是扫描自带的二维码使用下面函数添加
-    				adduser($openid, 0);
-    			}
+    			// }else{
+    			// 	//如果是扫描自带的二维码使用下面函数添加
+    			// 	adduser($openid, 0);
+    			// }
 
     			break;
     		//-------------------------- 取消关注时触发的事件 --------------------------
@@ -207,8 +213,16 @@ class Wechat {
                 //创建菜单时设定了每个按钮不同的 key 就是这里的 $object->EventKey 了
     			switch ($object->EventKey)
     			{
-    				case "Contact":
-    					$content = "有事请来电:".PHP_EOL."18607437722";
+                    case "Contact":
+                        $content = "有事请来电:".PHP_EOL."18607437722";
+                        break;
+    				case "welcome":
+                $content = "欢迎光临[愉快]这个测试号是我的DEMO[嘿哈]，服务器在国外可能有点慢[捂脸]。
+[机智]主要演示功能有：
+1、扫码查询图书信息。(扫ISBN图书码，接的豆瓣API)
+2、扫码查询商品信息。(微信默认的扫码功能)
+3、图像识别功能。都在【图像识别】菜单下，试试就知道了。(接的 Face++)
+4、聊天功能接的是图灵机器人。(暂时只实现了基本的文字聊天[皱眉]，高级回复内容要花些时间排版，以后会陆续更新上来。)";
     					break;
     				default:
     					$content = "不认识的菜单：".$object->EventKey;
