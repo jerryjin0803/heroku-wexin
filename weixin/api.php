@@ -36,6 +36,18 @@ if (!isset($_GET['echostr'])) {
 //声明一个Wechat的类， 处理接收消息， 接收事件， 响应各种消息， 以及token验证
 class Wechat {
      
+    private $welcomeText = "欢迎光临[愉快]这个测试号是我的DEMO[嘿哈]
+服务器在国外可能有点慢[捂脸]。
+
+【【【[机智]主要演示功能有：】】】
+------------------------------------------------
+1、扫码查询图书信息。(书背后的ISBN码)
+2、扫码查询商品信息。
+3、图像识别功能。
+4、聊天机器人功能。
+------------------------------------------------
+聊天暂时只做了基本的文字回复功能[皱眉]，高级查寻的聊天内容需要花些时间排版，以后会陆续更新上来。所以目前查菜谱什么的，只能看到残缺的回复。";
+
     //验证签名, 手册中原代码改写
 	public function valid() {
         // you must define TOKEN by yourself
@@ -135,12 +147,7 @@ class Wechat {
 
                 // $content = array();
                 // $content[] = array("Title"=>"欢迎光临！",  "Description"=>"大家好，我是笨笨，笨笨的笨，笨笨的笨，谢谢！", "PicUrl"=>"https://mmbiz.qlogo.cn/mmbiz_jpg/0sSkmBT5m0YSu61LribFl6Q7NfjficDnrclvJeVtMkSEYCY5jVEpnytZaGzmZkqTiaWa841SNnIYR18WdCEXf0kOw/0");
-                $content = "欢迎光临[愉快]这个测试号是我的DEMO[嘿哈]，服务器在国外可能有点慢[捂脸]。
-[机智]主要演示功能有：
-1、扫码查询图书信息。(扫ISBN图书码，接的豆瓣API)
-2、扫码查询商品信息。(微信默认的扫码功能)
-3、图像识别功能。都在【图像识别】菜单下，试试就知道了。(接的 Face++)
-4、聊天功能接的是图灵机器人。(暂时只实现了基本的文字聊天[皱眉]，高级回复内容要花些时间排版，以后会陆续更新上来。)";
+                $content = $this->welcomeText;
     			// //通过事件中的xml转成的object对象中的FromUserName获取openid
     			// $openid = $object->FromUserName;
     			// //如果是扫描带参数的二维码
@@ -217,12 +224,7 @@ class Wechat {
                         $content = "有事请来电:".PHP_EOL."18607437722";
                         break;
     				case "welcome":
-                $content = "欢迎光临[愉快]这个测试号是我的DEMO[嘿哈]，服务器在国外可能有点慢[捂脸]。
-[机智]主要演示功能有：
-1、扫码查询图书信息。(扫ISBN图书码，接的豆瓣API)
-2、扫码查询商品信息。(微信默认的扫码功能)
-3、图像识别功能。都在【图像识别】菜单下，试试就知道了。(接的 Face++)
-4、聊天功能接的是图灵机器人。(暂时只实现了基本的文字聊天[皱眉]，高级回复内容要花些时间排版，以后会陆续更新上来。)";
+                        $content = $this->welcomeText;
     					break;
     				default:
     					$content = "不认识的菜单：".$object->EventKey;
